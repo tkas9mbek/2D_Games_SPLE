@@ -132,9 +132,9 @@ public class EscapeEngine implements Runnable{
                 flag = cm.checkGameObjectCollision(obstacle, EscapeMap.getEscapeMap().getHero());
                 if (flag) {
                     if(hero.getXPos() <= obstacle.getXPos()) {
-                        hero.setLocation(hero.getXPos() - 4, hero.getYPos());
+                        hero.setLocation(hero.getXPos() - 2, hero.getYPos());
                     } else {
-                        hero.setLocation(hero.getXPos() + 4, hero.getYPos());
+                        hero.setLocation(hero.getXPos() + 2, hero.getYPos());
                     }
                 }
             } catch (Exception e) {
@@ -164,7 +164,6 @@ public class EscapeEngine implements Runnable{
                         hero.setDead(true);
                     }
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -13,6 +13,7 @@ import sample.ApplicationLogic.GameEntities.Map;
 import sample.ApplicationLogic.GameManagement.GameEngine;
 import sample.UserInterface.InputManagement.InputManager;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 
 public class PauseMenu implements EventHandler<ActionEvent> {
@@ -75,7 +76,7 @@ public class PauseMenu implements EventHandler<ActionEvent> {
     public void handle(ActionEvent e) {
         try{
             root = sm.update(((Button) (e.getSource())).getText());
-        } catch (InterruptedException e1) {
+        } catch (InterruptedException | FileNotFoundException e1) {
             e1.printStackTrace();
         }
         if(((Button) (e.getSource())).getText().equals("Continue Game")){

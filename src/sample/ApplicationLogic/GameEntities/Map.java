@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.canvas.*;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import sample.UserInterface.Screen.GameEndPane;
 import sample.UserInterface.Screen.Main;
@@ -309,6 +310,8 @@ public class Map implements Runnable{
                 {
                     try{
                         head.setText("Score: " + score);
+                        head.setFill(Color.WHITE);
+
                         //update();
                         // calculate time since last update.
                         double elapsedTime = (currentNanoTime - lastNanoTime) / 1000000000.0;
@@ -365,7 +368,6 @@ public class Map implements Runnable{
                                 }
                             }
                         }
-                        //score = score + 50;
 
                     }catch (Exception e){
                         e.printStackTrace();

@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import sample.ApplicationLogic.GameManagement.SoundEngine;
 import sample.UserInterface.InputManagement.InputManager;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 
 //import java.awt.*;
@@ -98,7 +99,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
             }
             primaryStage.getScene().setRoot(root1);
             //root = sm.update(((Button)(e.getSource())).getText());
-        } catch (InterruptedException e1) {
+        } catch (InterruptedException | FileNotFoundException e1) {
             e1.printStackTrace();
         }
 

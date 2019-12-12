@@ -6,6 +6,7 @@ import javafx.scene.layout.*;
 import sample.ApplicationLogic.GameManagement.GameEngine;
 import sample.ApplicationLogic.GameManagement.EscapeEngine;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 
 public class ScreenManager {
@@ -57,7 +58,7 @@ public class ScreenManager {
         ScreenManager.sm = sm;
     }
 
-    public Parent update(String text) throws InterruptedException {
+    public Parent update(String text) throws InterruptedException, FileNotFoundException {
         if(text.equals("Play Shooter")){
             GameEngine ge = GameEngine.getGameEngine();
             ge.gameLoop();

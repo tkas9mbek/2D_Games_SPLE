@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import sample.UserInterface.Screen.PauseMenu;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 
 public class EscapeMap implements Runnable{
     private Parent root;
-    private int score;
+    private double score;
     private Text head;
     private Parent pauseRoot;
     private final String SECOND_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\prison2.jpg";
@@ -24,7 +25,7 @@ public class EscapeMap implements Runnable{
     private Skeleton hero;
     private AnimationTimer at;
 
-    public int getScore() {
+    public double getScore() {
         return score;
     }
 
@@ -114,7 +115,7 @@ public class EscapeMap implements Runnable{
 
 
     public void update() {
-        score = score + (int) (Math.random() * 20) / 19;
+        score = score + 0.01;
         for (int i = 0; i < gameObjects.size(); i++) {
             try {
                 if (gameObjects.get(i).getXPos() <= 0) {
@@ -143,7 +144,8 @@ public class EscapeMap implements Runnable{
                 public void handle(long currentNanoTime)
                 {
                     try{
-                        head.setText("Score: " + score);
+                        head.setText("Score: " + (int)score);
+                        head.setFill(Color.WHITE);
                         double elapsedTime = (currentNanoTime - lastNanoTime) / 1000000000.0;
                         lastNanoTime = currentNanoTime;
 
@@ -176,7 +178,7 @@ public class EscapeMap implements Runnable{
     public Parent load(){
         root.getStylesheets().add("sample/UserInterface/Screen/style.css");
         createContent();
-        head = new Text("Score: " + score);
+        head = new Text("Score: " + (int)score);
         head.setTranslateX(350);
         head.setTranslateY(-200);
         head.setId("header-help");

@@ -26,7 +26,7 @@ public class Trap extends GameObject {
             setSpriteImage(new Image(new FileInputStream(SPIKE)));
             setLocation(xPos, 2);
         } else {
-            setLocation(xPos, 400);
+            setLocation(xPos, 410);
             setSpriteImage(new Image(new FileInputStream(TRAP)));
         }
         setType("Trap");
