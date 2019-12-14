@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Hero extends GameObject {
     private static int MAX_SUB_LEVEL = 5;
-    private static int VELOCITY = 50;
+    private static int VELOCITY = 125;
 
     private static Hero hero;
 
@@ -30,14 +30,6 @@ public class Hero extends GameObject {
 
     // default constructor
     public Hero(){}
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
 
     private Hero(int lvl) throws FileNotFoundException {
         super(0, 200);
@@ -209,16 +201,16 @@ public class Hero extends GameObject {
                 String pressedKey = InputManager.getPressedKey().toString();
                 System.out.println(lines[0]);
                 if(pressedKey.toString().equals(lines[0])) {
-                    setVelocity(0, -150);
+                    setVelocity(0, -VELOCITY);
                 }
                 else if(pressedKey.toString().equals(lines[1])) {
-                    setVelocity(0, 150);
+                    setVelocity(0, VELOCITY);
                 }
                 else if(pressedKey.toString().equals(lines[2])) {
-                    setVelocity(-150, 0);
+                    setVelocity(-VELOCITY, 0);
                 }
                 else if(pressedKey.toString().equals(lines[3])) {
-                    setVelocity(150, 0);
+                    setVelocity(VELOCITY, 0);
                 }
                 else if(pressedKey.toString().equals(lines[4])) {
                     shoot();

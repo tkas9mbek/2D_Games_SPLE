@@ -86,7 +86,6 @@ public class Map implements Runnable{
         }
     }
     private Map(){
-        //setEnemyForSurvival();
         this.mapLevel = 1;
         root = new GridPane();
         gameObjects = new ArrayList<>();
@@ -101,10 +100,12 @@ public class Map implements Runnable{
         }
         score = 0;
     }
+
     public void clearGameObjects(){
         totalCountOfEnemies = 0;
         gameObjects.clear();
     }
+
     public void setBackgroundImage(String backgroundImage){
         this.backgroundImage = new BackgroundImage(new javafx.scene.image.Image("file:\\" + backgroundImage,852,480,false,true),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
@@ -330,14 +331,13 @@ public class Map implements Runnable{
                         }
                         System.out.println(hero.getAttackSpeed());
                         if(!survivalMode){
-                            for(int i = 0;i < totalCountOfEnemies - deadCount + (4 - powerUpDisappeared); i++){
+                            for(int i = 0;i < gameObjects.size(); i++){
 
 
                                 gameObjects.get(i).update(elapsedTime);
 
                                 gameObjects.get(i).draw(gc);
                                 if(gameObjects.get(i).toString().equals("Big Enemy")){
-                                    //System.out.println("entered");
                                     ((BigEnemy)gameObjects.get(i)).shoot();
                                     for(int j = 0; j < ((BigEnemy)gameObjects.get(i)).getBullets().size(); j++){
                                         ((BigEnemy)gameObjects.get(i)).getBullets().get(j).update(elapsedTime);
@@ -399,10 +399,6 @@ public class Map implements Runnable{
             t.start();
         }
         ((GridPane)root).getChildren().add(head);
-        /*if(t == null){
-            t = new Thread();
-            t.start();
-        }*/
         return root;
     }
 
@@ -456,16 +452,15 @@ public class Map implements Runnable{
         }
         return powerUps;
     }
+
     public Parent pauseGame(boolean gamePaused){
-        //root = new GridPane();
         if(gamePaused){
             at.stop();
-
         }
         else{
             at.start();
-
         }
         return pauseRoot;
     }
+
 }

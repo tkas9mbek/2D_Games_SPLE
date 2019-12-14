@@ -18,7 +18,7 @@ public class ScreenManager {
     private ScreenManager(int width, int height, Parent root){
         this.height = height;
         this.width = width;
-        this.root = root;
+        ScreenManager.root = root;
         BackgroundImage myBI= new BackgroundImage(new Image(DIR_LOC +  "\\images\\back.png",852,480,false,true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);

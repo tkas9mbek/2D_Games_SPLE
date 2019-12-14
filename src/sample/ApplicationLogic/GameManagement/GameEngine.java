@@ -11,6 +11,7 @@ import sample.UserInterface.Screen.Main;
 import java.util.ArrayList;
 
 public class GameEngine implements Runnable{
+
     private boolean isGamePaused;
     private Map gameMap;
     private CollisionManager cm;
@@ -22,10 +23,6 @@ public class GameEngine implements Runnable{
 
     public void setGameMap(Map gameMap) {
         this.gameMap = gameMap;
-    }
-
-    public boolean isGamePaused() {
-        return isGamePaused;
     }
 
     public void setGamePaused(boolean gamePaused) {
@@ -49,10 +46,6 @@ public class GameEngine implements Runnable{
         try{
             while (true) {
                 if(!isGamePaused){
-                    //System.out.println("entered");
-
-                    //System.out.println(isGamePaused);
-
                     gameMap.update();
                     checkCollision();
                     if(gameMap.getHero().getHealth().getHealthAmount() <= 0){
@@ -60,8 +53,6 @@ public class GameEngine implements Runnable{
                         Platform.runLater(
                                 () -> {
                                     Main.getPrimaryStage().setScene(GameOverPane.getInstance().getScene());
-
-                                    //x.closeWriter();
                                 }
                         );
                     }
@@ -73,35 +64,27 @@ public class GameEngine implements Runnable{
         }catch (Exception e){
             e.printStackTrace();
         }
-        //while(true){
-
-
     }
-
 
     public void gameLoop(){
         if(t == null){
-            //System.out.println(isGamePaused);
             t = new Thread(this);
             t.start();
         }
     }
+
     public synchronized void update(){
         try{
             KeyCode checkKey = InputManager.getPressedKey();
             if(checkKey != null){
-                //System.out.println(InputManager.getPressedKey());
                 if(checkKey.toString().equals("ESCAPE")){
-                    isGamePaused = true;
-                    if(isGamePaused){
-                        Platform.runLater(
-                                () -> {
-                                    Parent root = Map.getMap().pauseGame(true);
-                                    Main.getPrimaryStage().getScene().setRoot(root);
-                                }
-                        );
+                    Platform.runLater(
+                            () -> {
+                                Parent root = Map.getMap().pauseGame(true);
+                                Main.getPrimaryStage().getScene().setRoot(root);
+                            }
+                    );
 
-                    }
                 }
             }
         }catch (Exception e){
@@ -132,68 +115,68 @@ public class GameEngine implements Runnable{
             powerUps = Map.getMap().getVisiblePowerUps();
         }
 
-        //System.out.println(powerUps.size());
-        //System.out.println(enemies.size());
-        for(int i = 0; i < enemies.size(); i++){
-            try{
-                //System.out.println(enemies.get(i).getWidth());
-                flag = cm.checkGameObjectCollision(enemies.get(i), Map.getMap().getHero());
-                //System.out.println(flag);
-                if(flag){
+        for (Enemy enemy : enemies) {
+            try {
+                flag = cm.checkGameObjectCollision(enemy, Map.getMap().getHero());
+                if (flag) {
                     Map.getMap().getHero().healthDecrease(1);
-                    enemies.get(i).decreaseHealth(1);
+                    enemy.decreaseHealth(1);
                 }
-                for(int j = 0; j < Map.getMap().getHero().getBullets().size() && !flag1; j++){
-                    flag1 = cm.checkGameObjectCollision(enemies.get(i), Map.getMap().getHero().getBullets().get(j));
-                    if(flag1){
-                        //System.out.println("decrease enemy");
-                        enemies.get(i).decreaseHealth(Map.getMap().getHero().getBullets().get(j).getDamage());
+                for (int j = 0; j < Map.getMap().getHero().getBullets().size() && !flag1; j++) {
+                    flag1 = cm.checkGameObjectCollision(enemy, Map.getMap().getHero().getBullets().get(j));
+                    if (flag1) {
+                        enemy.decreaseHealth(Map.getMap().getHero().getBullets().get(j).getDamage());
                         Map.getMap().getHero().getBullets().remove(j);
-                        if(enemies.get(i).getHealth() <= 0){
-                            Map.getMap().getHero().updateExperience(enemies.get(i).getExperiencePrize());
-                            Map.getMap().setScore(enemies.get(i).getScorePrize());
+                        if (enemy.getHealth() <= 0) {
+                            Map.getMap().getHero().updateExperience(enemy.getExperiencePrize());
+                            Map.getMap().setScore(enemy.getScorePrize());
                         }
                     }
                 }
-                if(enemies.get(i).toString().equals("Big Enemy") || enemies.get(i).toString().equals("Boss")){
+                if (enemy.toString().equals("Big Enemy") || enemy.toString().equals("Boss")) {
                     ArrayList<Bullet> bullets;
-                    if(enemies.get(i).toString().equals("Big Enemy"))
-                        bullets = ((BigEnemy)enemies.get(i)).getBullets();
+                    if (enemy.toString().equals("Big Enemy"))
+                        bullets = ((BigEnemy) enemy).getBullets();
                     else
-                        bullets = ((Boss)enemies.get(i)).getBullets();
-                    for(int j = 0; j < bullets.size() && !flag2; j++){
+                        bullets = ((Boss) enemy).getBullets();
+                    for (int j = 0; j < bullets.size() && !flag2; j++) {
                         flag2 = cm.checkGameObjectCollision(Map.getMap().getHero(), bullets.get(j));
-                        if(flag2){
-                            if(enemies.get(i).toString().equals("Big Enemy")){
-                                Map.getMap().getHero().healthDecrease(((BigEnemy)enemies.get(i)).getBullets().get(j).getDamage());
-                                ((BigEnemy)enemies.get(i)).getBullets().remove(j);
-                            }
-                            else{
+                        if (flag2) {
+                            if (enemy.toString().equals("Big Enemy")) {
+                                Map.getMap().getHero().healthDecrease(((BigEnemy) enemy).getBullets().get(j).getDamage());
+                                ((BigEnemy) enemy).getBullets().remove(j);
+                            } else {
                                 System.out.println("boss damage");
-                                Map.getMap().getHero().healthDecrease(((Boss)enemies.get(i)).getBullets().get(j).getDamage());
-                                ((Boss)enemies.get(i)).getBullets().remove(j);
+                                Map.getMap().getHero().healthDecrease(((Boss) enemy).getBullets().get(j).getDamage());
+                                ((Boss) enemy).getBullets().remove(j);
                             }
 
                         }
                     }
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        for(int i = 0; i < powerUps.size(); i++){
-            try{
-                flag3 = cm.checkGameObjectCollision(powerUps.get(i), Map.getMap().getHero());
-                //System.out.println(flag3);
-                if(flag3){
-                    switch (powerUps.get(i).getID()){
-                        case(1): {Map.getMap().getHero().regenHealth(powerUps.get(i)); powerUps.get(i).setUsed(true); break;}
-                        case(2): {Map.getMap().getHero().regenEnergy(powerUps.get(i)); powerUps.get(i).setUsed(true); break;}
+        for (PowerUp powerUp : powerUps) {
+            try {
+                flag3 = cm.checkGameObjectCollision(powerUp, Map.getMap().getHero());
+                if (flag3) {
+                    switch (powerUp.getID()) {
+                        case (1): {
+                            Map.getMap().getHero().regenHealth(powerUp);
+                            powerUp.setUsed(true);
+                            break;
+                        }
+                        case (2): {
+                            Map.getMap().getHero().regenEnergy(powerUp);
+                            powerUp.setUsed(true);
+                            break;
+                        }
                     }
-                    Map.getMap().setScore(powerUps.get(i).getScore());
+                    Map.getMap().setScore(powerUp.getScore());
                 }
-
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

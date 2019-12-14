@@ -10,7 +10,6 @@ public class SkillManager {
     private Skill skills[];
     int subLvl;
 
-
     //Constructor
     public SkillManager( int lvl) throws FileNotFoundException {
         subLvl = lvl;

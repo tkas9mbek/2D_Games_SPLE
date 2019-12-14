@@ -30,11 +30,9 @@ public class EscapeMap implements Runnable{
     }
 
     public void run(){
-
     }
 
     private EscapeMap(){
-        //setEnemyForSurvival();
         root = new GridPane();
         gameObjects = new ArrayList<>();
         locationManager = new ObjectRandomLocationManager();
@@ -61,8 +59,6 @@ public class EscapeMap implements Runnable{
         ((GridPane)this.root).setPrefSize(852,480);
     }
 
-
-
     public void setEnemies(){
         try{
             gameObjects.clear();
@@ -76,8 +72,8 @@ public class EscapeMap implements Runnable{
             }
             for(int i = 800; i < 50000;) {
 
-                int choice = (int) (Math.random() * 17);
-                if (choice < 6) {
+                int choice = (int) (Math.random() * 18);
+                if (choice < 7) {
                     locationManager.generateLocation(i = i + 100, i + 25, 30, 400);
                     x = locationManager.getX();
                     yLoc = (yLoc + (int) (Math.random() * 120 + 120)) % 440;
@@ -90,13 +86,13 @@ public class EscapeMap implements Runnable{
                     gameObject = new Obstacle(x, yLoc, true, 1);
                     gameObjects.add(gameObject);
                     yLoc = (yLoc + (int) (Math.random() * 140 + 140)) % 440;
-                } else if (choice < 11) {
+                } else if (choice < 14) {
                     locationManager.generateLocation(i = i + 150, i + 25, 30, 400);
                     x = locationManager.getX();
                     yLoc = (yLoc + (int) (Math.random() * 85 + 90)) % 420;
                     gameObject = new Trap(x, yLoc, true);
                     gameObjects.add(gameObject);
-                } else if (choice < 14) {
+                } else if (choice < 17) {
                     locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
                     gameObject = new EscapePowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1));
                     gameObject.setVisible(false);
@@ -129,15 +125,10 @@ public class EscapeMap implements Runnable{
 
     public void createContent(){
         try{
-
-            //Creating an image
-            // Image image = new Image(new FileInputStream("C:\\Users\\SnowPlace\\IdeaProjects\\Demofx_1\\src\\sample\\Enemy_Crab.png"));
             Canvas canvas = new Canvas(850, 480);
             ((GridPane)root).getChildren().add( canvas );
 
             GraphicsContext gc = canvas.getGraphicsContext2D();
-
-            //double lastNanoTime = System.nanoTime();
             at = new AnimationTimer()
             {
                 double lastNanoTime = System.nanoTime();
@@ -196,7 +187,6 @@ public class EscapeMap implements Runnable{
 
     public void setScore(int score) {
         this.score = this.score + score;
-
     }
 
     public GameObject getGameObject(double x, double y){
@@ -266,14 +256,11 @@ public class EscapeMap implements Runnable{
     }
 
     public Parent pauseGame(boolean gamePaused){
-        //root = new GridPane();
         if(gamePaused){
             at.stop();
-
         }
         else{
             at.start();
-
         }
         return pauseRoot;
     }

@@ -43,8 +43,6 @@ public class GameObject {
     // default constructor
     GameObject(){
     }
-
-
     public void draw(GraphicsContext gc)
     {
         gc.drawImage( spriteImage, xPos, yPos );

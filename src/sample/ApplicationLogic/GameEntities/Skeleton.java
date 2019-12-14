@@ -15,6 +15,7 @@ public class Skeleton extends GameObject {
     private static Skeleton hero;
 
     private boolean dead;
+    private boolean shielded;
 
     public boolean isShielded() {
         return shielded;
@@ -23,21 +24,10 @@ public class Skeleton extends GameObject {
     public void setShielded(boolean shielded) {
         this.shielded = shielded;
     }
-
-    private boolean shielded;
-
     private String avatar = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\warlock.png";
     private String avatar2 = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\warlock_shielded.png";
 
     // default constructor
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
     private Skeleton() throws FileNotFoundException {
         super(200, 200);
         setDead(false);
@@ -67,7 +57,7 @@ public class Skeleton extends GameObject {
             } else {
                 setSpriteImage( new Image(new FileInputStream(avatar)));
             }
-            if( ((getXPos() + time * getXVelocity()) <= 800 - getWidth())
+            if( ((getXPos() + time * getXVelocity()) <= 840 - getWidth())
                     && ((getXPos() + time * getXVelocity()) >= 0)
                     && ((getYPos() + time * getYVelocity()) <= 480 - getHeight())
                     && ((getYPos() + time * getYVelocity()) >= 0) ){
@@ -112,7 +102,7 @@ public class Skeleton extends GameObject {
                 }
             }
             else{
-                setVelocity(0,0);
+                setVelocity(-25,0);
             }
         }catch (Exception e){
             e.printStackTrace();
