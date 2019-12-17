@@ -101,7 +101,6 @@ public class Enemy extends GameObject{
     }
     public void decreaseHealth( int damage) throws FileNotFoundException {
         setHealth( health - damage);
-        //System.out.println(health);
         update(0);
     }
 }

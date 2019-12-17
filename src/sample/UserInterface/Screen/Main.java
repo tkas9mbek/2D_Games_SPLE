@@ -55,7 +55,6 @@ public class Main extends Application implements EventHandler<ActionEvent>{
         //Buttons
 
         Button playbutton = new Button("Play " + game);
-        System.out.println(playbutton.getText());
         playbutton.setTranslateX(335);
         playbutton.setTranslateY(175);
         playbutton.getStyleClass().add("menu-button");

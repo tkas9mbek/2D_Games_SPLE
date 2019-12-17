@@ -89,9 +89,6 @@ public class Bullet extends GameObject {
     }
 
     public void setID(int ID) {
-        if( ID == 1 || ID == 2 || ID ==3)
-            this.ID = ID;
-        else
-            throw new ArrayIndexOutOfBoundsException("Invalid value is entered");
+        this.ID = ID;
     }
 }

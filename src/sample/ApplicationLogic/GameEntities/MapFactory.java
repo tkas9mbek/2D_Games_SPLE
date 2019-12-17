@@ -1,7 +1,5 @@
 package sample.ApplicationLogic.GameEntities;
 
-import java.io.FileNotFoundException;
-
 public class MapFactory {
     private EscapeMap escapeMap;
     private ShooterMap shooterMap;

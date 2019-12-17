@@ -76,10 +76,7 @@ public class Experience {
         subLevel = sub.getSubLevel();
         setCurExperience( curExperience + increaseAmount);
         expBar.setSpriteImage( EXPBAR[ (curExperience + 1 ) / (maxExperience / (imageSize - 1) )]);
-        System.out.println(curExperience);
-        System.out.println(maxExperience);
         if( curExperience >= maxExperience && subLevel != maxLvl){
-            System.out.println("entered here");
             sub.setSubLevel( subLevel + 1);
             sub.updateStats();
             updateStats( subLevel + 1);

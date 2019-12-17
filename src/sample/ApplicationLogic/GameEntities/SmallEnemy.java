@@ -24,8 +24,6 @@ public class SmallEnemy extends Enemy {
         Scanner sc = new Scanner(file);
         String game = sc.next();
 
-        System.out.println(game);
-
         if( game.equals("Escape")) {
             setLocation(xPos, yPos);
             setVisible(visible);

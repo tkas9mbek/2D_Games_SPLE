@@ -42,7 +42,7 @@ public class Skill {
     }
 
     //Methods
-    private void updateStats( int subLvl) throws FileNotFoundException {
+    private void updateStats( int subLvl) {
         this.subLvl = subLvl;
         if( skillID == 1){
             maxEffectTime = 10;
@@ -180,7 +180,6 @@ public class Skill {
             updateTimeEffect( time, sub);
         }
         if( !isOnCooldown()){
-            //System.out.println("entered here!");
             restoreImages();
         }else{
             cooldownTime -= time;

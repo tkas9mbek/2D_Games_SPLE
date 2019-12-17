@@ -1,10 +1,7 @@
 package sample.ApplicationLogic.GameManagement;
 
 import javafx.application.Platform;
-import javafx.scene.Parent;
-import javafx.scene.input.KeyCode;
 import sample.ApplicationLogic.GameEntities.*;
-import sample.UserInterface.InputManagement.InputManager;
 import sample.UserInterface.Screen.GameOverPane;
 import sample.UserInterface.Screen.Main;
 
@@ -92,7 +89,6 @@ public class ShooterEngine extends AbstractEngine{
                                         .healthDecrease(((BigEnemy) enemy).getBullets().get(j).getDamage());
                                 ((BigEnemy) enemy).getBullets().remove(j);
                             } else {
-                                System.out.println("boss damage");
                                 hero
                                         .healthDecrease(((Boss) enemy).getBullets().get(j).getDamage());
                                 ((Boss) enemy).getBullets().remove(j);

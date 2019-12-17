@@ -77,7 +77,6 @@ public class Skeleton extends AbstractHero {
                 String setting = new FileManager("Settings.txt").readFromFile();
                 String lines[] = setting.split("\\r?\\n");
                 String pressedKey = InputManager.getPressedKey().toString();
-                System.out.println(lines[0]);
                 if(pressedKey.equals(lines[0])) {
                     setVelocity(0, -VELOCITY);
                 }

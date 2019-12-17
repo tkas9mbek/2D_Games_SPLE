@@ -30,8 +30,6 @@ public class PowerUp extends GameObject {
         Scanner sc = new Scanner(file);
         String game = sc.next();
 
-        System.out.println(game);
-
         if( game.equals("Escape") ) {
             if (ID == 1) {
                 setVelocity(-65, 0);

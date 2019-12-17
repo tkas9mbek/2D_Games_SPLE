@@ -150,15 +150,11 @@ public class Mage extends AbstractHero {
             attackCooldown = attackSpeed;
             SoundEngine.getInstance().playSound(1);
         }
-        double[] arr = {-1};
-
     }
 
     @Override
     public void update(double time){
         try{
-            //updateStats();
-
             if( ((getXPos() + time * getXVelocity()) <= 425 - getWidth())
                                     && ((getXPos() + time * getXVelocity()) >= 0)
                                     && ((getYPos() + time * getYVelocity()) <= 480 - getHeight())
@@ -188,7 +184,6 @@ public class Mage extends AbstractHero {
                 String setting = new FileManager("Settings.txt").readFromFile();
                 String lines[] = setting.split("\\r?\\n");
                 String pressedKey = InputManager.getPressedKey().toString();
-                System.out.println(lines[0]);
                 if(pressedKey.equals(lines[0])) {
                     setVelocity(0, -VELOCITY);
                 }

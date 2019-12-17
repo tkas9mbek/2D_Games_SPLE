@@ -29,7 +29,6 @@ public class ScreenManager {
         ((GridPane)this.root).setBackground(new Background(myBI));
         ((GridPane)this.root).setPrefSize(852,480);
         this.root.getStylesheets().add("sample/UserInterface/Screen/style.css");
-        //System.out.println(this.root);
     }
     public int getHeight() {
         return height;

@@ -11,13 +11,9 @@ public class CollisionManager {
         object1 = g1;
         object2 = g2;
         double xPosOfEnemy = g1.getCollisionRectangle().getX();
-        //System.out.println(xPosOfEnemy);
         double yPosOfEnemy = g1.getCollisionRectangle().getY();
-        //System.out.println(yPosOfEnemy);
         double widthOfEnemy = g1.getCollisionRectangle().getWidth();
-        //System.out.println(widthOfEnemy);
         double heightOfEnemy = g1.getCollisionRectangle().getHeight();
-        //System.out.println(heightOfEnemy);
         if(g2.getCollisionRectangle().intersects(xPosOfEnemy,yPosOfEnemy,widthOfEnemy,heightOfEnemy)){
             return true;
         }
