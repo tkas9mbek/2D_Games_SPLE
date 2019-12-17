@@ -22,12 +22,10 @@ public class Skill {
     private GameObject object;
     private double timeOfEffect;
     private double cooldownTime;
-    private int damage;
-    private double finalAttackSpeed;
     private int finalAttack;
     private int skillID;
-    private boolean onEffect;
     private boolean unlocked;
+    private boolean onEffect;
     private boolean onCooldown;
     private int energyCost;
     private int subLvl;
@@ -43,31 +41,28 @@ public class Skill {
         setOnEffect();
     }
 
-
     //Methods
     private void updateStats( int subLvl) throws FileNotFoundException {
         this.subLvl = subLvl;
         if( skillID == 1){
             maxEffectTime = 10;
-            maxCooldownTime = 30 - 3 * ( subLvl - 1);
+            maxCooldownTime = 25;
             setEnergyCost(30);
         }
         if( skillID == 2){
             maxEffectTime = 9;
-            maxCooldownTime = 40 - 3 * ( subLvl - 2);
-            setFinalAttackSpeed( subLvl);
+            maxCooldownTime = 32;
             setEnergyCost(30);
         }
         if( skillID == 3){
             maxEffectTime = 8;
-            maxCooldownTime = 30 - 3 * ( subLvl - 3);
+            maxCooldownTime = 28;
             setEnergyCost(40);
         }
         setUnlocked(subLvl);
-        restoreImages();
     }
 
-    public void waterFireballs(Hero sub) throws FileNotFoundException {
+    public void waterFireballs(Mage sub) throws FileNotFoundException {
         useSkill();
         finalAttack = sub.getAttackDamage();
         sub.setAmountOfProjectile(subLvl + 1);
@@ -76,14 +71,13 @@ public class Skill {
         setTimeOfEffect( maxEffectTime);
     }
 
-    public void speedBooster(Hero sub) throws FileNotFoundException {
+    public void speedBooster(Mage sub) throws FileNotFoundException {
         useSkill();
-        setFinalAttackSpeed(sub.getAttackSpeed());
-        sub.setAttackSpeed( 0.5 );
+        sub.setAttackSpeed( 0.4 );
         setOnEffect();
         setTimeOfEffect( maxEffectTime);
     }
-    public void invulnerability(Hero sub) throws FileNotFoundException {
+    public void invulnerability(Mage sub) throws FileNotFoundException {
         useSkill();
         setOnEffect();
         setTimeOfEffect( maxEffectTime);
@@ -117,7 +111,7 @@ public class Skill {
             this.timeOfEffect = timeOfEffect;
     }
 
-    public void updateTimeEffect(double time, Hero sub) throws FileNotFoundException {
+    public void updateTimeEffect(double time, Mage sub) throws FileNotFoundException {
         setTimeOfEffect( timeOfEffect - time);
         if( timeOfEffect <= 0){
             if( skillID == 1){
@@ -126,7 +120,7 @@ public class Skill {
                 object.setSpriteImage( new Image( new FileInputStream(COOLDOWN_IMAGE)));
             }
             if( skillID == 2){
-                sub.setAttackSpeed( finalAttackSpeed);
+                sub.setAttackSpeed( 0.8);
                 object.setSpriteImage( new Image( new FileInputStream(COOLDOWN_IMAGE)));
             }
             if( skillID == 3){
@@ -146,10 +140,6 @@ public class Skill {
         }
         else
             this.cooldownTime = cooldownTime;
-    }
-
-    public void setFinalAttackSpeed(double finalAttackSpeed) {
-        this.finalAttackSpeed = finalAttackSpeed;
     }
 
     public int getSkillID() {
@@ -182,7 +172,7 @@ public class Skill {
         object.draw( g);
     }
 
-    public void update( double time, Hero sub) throws FileNotFoundException {
+    public void update( double time, Mage sub) throws FileNotFoundException {
         if( sub.getSubLevel() != subLvl){
             updateStats( sub.getSubLevel());
         }

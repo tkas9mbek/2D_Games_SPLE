@@ -20,7 +20,7 @@ public class SkillManager {
     }
 
     //Methods
-    public void update(double time, Hero sub) throws FileNotFoundException {
+    public void update(double time, Mage sub) throws FileNotFoundException {
         if( sub.getSubLevel() != subLvl){
             subLvl = sub.getSubLevel();
         }

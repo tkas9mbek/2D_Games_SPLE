@@ -3,13 +3,15 @@ package sample.UserInterface.Screen;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import sample.ApplicationLogic.GameManagement.GameEngine;
+import sample.ApplicationLogic.GameManagement.EngineFactory;
 import sample.ApplicationLogic.GameManagement.EscapeEngine;
+import sample.ApplicationLogic.GameManagement.ShooterEngine;
 
-import java.io.FileNotFoundException;
 import java.net.URL;
 
 public class ScreenManager {
+    private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
+
     private int width;
     private final URL DIR_LOC = getClass().getResource(".");
     private int height;
@@ -58,16 +60,19 @@ public class ScreenManager {
         ScreenManager.sm = sm;
     }
 
-    public Parent update(String text) throws InterruptedException, FileNotFoundException {
+    public Parent update(String text) {
+
+        EngineFactory engineFactory = new EngineFactory();
+
         if(text.equals("Play Shooter")){
-            GameEngine ge = GameEngine.getGameEngine();
+            ShooterEngine ge = engineFactory.getShooterEngine();
             ge.gameLoop();
-            root = ge.getGameMap().load();
+            root = ge.mapFactory.getShooterMap().load();
         }
         else if(text.equals("Play Escape")){
-            EscapeEngine ge = EscapeEngine.getGameEngine();
+            EscapeEngine ge = engineFactory.getEscapeEngine();
             ge.gameLoop();
-            root = ge.getGameEscapeMap().load();
+            root = ge.mapFactory.getEscapeMap().load();
         }
         else if(text.equals("Play Quest")){
 

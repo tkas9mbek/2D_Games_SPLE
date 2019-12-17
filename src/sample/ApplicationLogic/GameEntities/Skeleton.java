@@ -8,11 +8,9 @@ import sample.UserInterface.InputManagement.InputManager;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class Skeleton extends GameObject {
+public class Skeleton extends AbstractHero {
 
     private int VELOCITY = 125;
-
-    private static Skeleton hero;
 
     private boolean dead;
     private boolean shielded;
@@ -27,18 +25,10 @@ public class Skeleton extends GameObject {
     private String avatar = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\warlock.png";
     private String avatar2 = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\warlock_shielded.png";
 
-    // default constructor
-    private Skeleton() throws FileNotFoundException {
+    Skeleton() throws FileNotFoundException {
         super(200, 200);
         setDead(false);
         setSpriteImage( new Image(new FileInputStream(avatar)));
-    }
-
-    public static Skeleton getHero() throws FileNotFoundException {
-        if (null == hero) {
-            hero = new Skeleton();
-        }
-        return hero;
     }
 
     public boolean isDead() {
@@ -81,23 +71,23 @@ public class Skeleton extends GameObject {
         this.VELOCITY = VELOCITY;
     }
 
-    public void controlSubmarine(){
+    public void controlHero(){
         try{
             if(InputManager.getPressedKey() != null){
                 String setting = new FileManager("Settings.txt").readFromFile();
                 String lines[] = setting.split("\\r?\\n");
                 String pressedKey = InputManager.getPressedKey().toString();
                 System.out.println(lines[0]);
-                if(pressedKey.toString().equals(lines[0])) {
+                if(pressedKey.equals(lines[0])) {
                     setVelocity(0, -VELOCITY);
                 }
-                else if(pressedKey.toString().equals(lines[1])) {
+                else if(pressedKey.equals(lines[1])) {
                     setVelocity(0, VELOCITY);
                 }
-                else if(pressedKey.toString().equals(lines[2])) {
+                else if(pressedKey.equals(lines[2])) {
                     setVelocity(-VELOCITY, 0);
                 }
-                else if(pressedKey.toString().equals(lines[3])) {
+                else if(pressedKey.equals(lines[3])) {
                     setVelocity(VELOCITY, 0);
                 }
             }
@@ -107,6 +97,5 @@ public class Skeleton extends GameObject {
         }catch (Exception e){
             e.printStackTrace();
         }
-
     }
 }

@@ -10,11 +10,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-public class Hero extends GameObject {
-    private static int MAX_SUB_LEVEL = 5;
-    private static int VELOCITY = 125;
+public class Mage extends AbstractHero {
 
-    private static Hero hero;
+    private static int MAX_LEVEL = 5;
+    int VELOCITY = 125;
 
     private int subLevel;
     private String avatar = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\mage.png";
@@ -28,11 +27,8 @@ public class Hero extends GameObject {
     private int attackDamage;
     private ArrayList<Bullet> bullets;
 
-    // default constructor
-    public Hero(){}
-
-    private Hero(int lvl) throws FileNotFoundException {
-        super(0, 200);
+    Mage(int lvl) throws FileNotFoundException {
+        super(200, 200);
         setSubLevel(lvl);
         setSpriteImage( new Image(new FileInputStream(avatar)));
         updateStats();
@@ -49,19 +45,12 @@ public class Hero extends GameObject {
         setAttackDamage(12 + 8 * subLevel);
     }
 
-    public static Hero getHero() throws FileNotFoundException {
-        if (null == hero) {
-            hero = new Hero(1);
-        }
-        return hero;
-    }
-
     public int getSubLevel() {
         return subLevel;
     }
 
     public void setSubLevel(int subLevel) {
-        if( subLevel >= 1 && subLevel <= MAX_SUB_LEVEL) {
+        if( subLevel >= 1 && subLevel <= MAX_LEVEL) {
             this.subLevel = subLevel;
         }
     }
@@ -70,14 +59,14 @@ public class Hero extends GameObject {
         if(skills.getSkill(ID) != null && skills.getSkill(ID).getEnergyCost() <= energy.getEnergyAmount() && !skills.getSkill(ID).isOnCooldown()){
             energy.update( -skills.getSkill(ID).getEnergyCost());
             if(ID == 1){
-                skills.getSkill(ID).waterFireballs( getHero());
+                skills.getSkill(ID).waterFireballs( this );
                 SoundEngine.getInstance().playSound(3);
             }
             if( ID == 2){
-                skills.getSkill(ID).speedBooster( getHero());
+                skills.getSkill(ID).speedBooster( this);
             }
             if( ID == 3){
-                skills.getSkill(ID).invulnerability( getHero());
+                skills.getSkill(ID).invulnerability( this);
             }
         }
     }
@@ -193,35 +182,35 @@ public class Hero extends GameObject {
         skills.draw(gc);
         experience.draw(gc);
     }
-    public void controlSubmarine(){
+    public void controlHero(){
         try{
             if(InputManager.getPressedKey() != null){
                 String setting = new FileManager("Settings.txt").readFromFile();
                 String lines[] = setting.split("\\r?\\n");
                 String pressedKey = InputManager.getPressedKey().toString();
                 System.out.println(lines[0]);
-                if(pressedKey.toString().equals(lines[0])) {
+                if(pressedKey.equals(lines[0])) {
                     setVelocity(0, -VELOCITY);
                 }
-                else if(pressedKey.toString().equals(lines[1])) {
+                else if(pressedKey.equals(lines[1])) {
                     setVelocity(0, VELOCITY);
                 }
-                else if(pressedKey.toString().equals(lines[2])) {
+                else if(pressedKey.equals(lines[2])) {
                     setVelocity(-VELOCITY, 0);
                 }
-                else if(pressedKey.toString().equals(lines[3])) {
+                else if(pressedKey.equals(lines[3])) {
                     setVelocity(VELOCITY, 0);
                 }
-                else if(pressedKey.toString().equals(lines[4])) {
+                else if(pressedKey.equals(lines[4])) {
                     shoot();
                 }
-                else if(pressedKey.toString().equals(lines[5])) {
+                else if(pressedKey.equals(lines[5])) {
                     useSkill(1);
                 }
-                else if(pressedKey.toString().equals(lines[6])) {
+                else if(pressedKey.equals(lines[6])) {
                     useSkill(2);
                 }
-                else if(pressedKey.toString().equals(lines[7])) {
+                else if(pressedKey.equals(lines[7])) {
                     useSkill(3);
                 }
             }

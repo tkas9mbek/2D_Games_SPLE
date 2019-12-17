@@ -27,9 +27,6 @@ public class Enemy extends GameObject{
     Enemy(double xPos, double yPos){
         super(xPos, yPos);
     }
-    //Map lvl constructor
-    Enemy( double xPos, double yPos, boolean visible, int mapLvl){
-    }
 
     // default constructor
     Enemy(){

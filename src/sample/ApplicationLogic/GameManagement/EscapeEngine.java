@@ -1,99 +1,38 @@
 package sample.ApplicationLogic.GameManagement;
 
 import javafx.application.Platform;
-import javafx.scene.Parent;
-import javafx.scene.input.KeyCode;
 import sample.ApplicationLogic.GameEntities.*;
-import sample.UserInterface.InputManagement.InputManager;
 import sample.UserInterface.Screen.GameOverPane;
 import sample.UserInterface.Screen.Main;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-public class EscapeEngine implements Runnable{
-    private boolean isGamePaused;
+public class EscapeEngine extends AbstractEngine{
+
     private EscapeMap gameEscapeMap;
-    private CollisionManager cm;
-    private static EscapeEngine gameEngine;
 
-    public EscapeMap getGameEscapeMap() {
-        return gameEscapeMap;
-    }
-
-    public void setGameEscapeMap(EscapeMap gameEscapeMap) {
-        this.gameEscapeMap = gameEscapeMap;
-    }
-
-    public boolean isGamePaused() {
-        return isGamePaused;
-    }
-
-    public void setGamePaused(boolean gamePaused) {
-        isGamePaused = gamePaused;
-    }
-
-    private Thread t;
-
-    public void setT(Thread t) {
-        this.t = t;
-    }
-
-    private EscapeEngine(){
+    public EscapeEngine(){
         isGamePaused = false;
-        gameEscapeMap = EscapeMap.getEscapeMap();
+        gameEscapeMap = mapFactory.getEscapeMap();
         cm = CollisionManager.getInstance();
     }
 
+    @Override
     public void run(){
         try{
             while (true) {
                 if(!isGamePaused){
-                    //System.out.println("entered");
-
-                    //System.out.println(isGamePaused);
 
                     gameEscapeMap.update();
                     checkCollision();
-                    if(gameEscapeMap.getHero().isDead()){
+
+                    if(gameEscapeMap.heroFactory.getSkeleton().isDead()){
                         Platform.runLater(
-                                () -> {
-                                    Main.getPrimaryStage().setScene(GameOverPane.getInstance().getScene());
-                                }
+                                () -> Main.getPrimaryStage().setScene(GameOverPane.getInstance().getScene())
                         );
                     }
 
-                }
-                update();
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-
-    public void gameLoop(){
-        if(t == null){
-            //System.out.println(isGamePaused);
-            t = new Thread(this);
-            t.start();
-        }
-    }
-    public synchronized void update(){
-        try{
-            KeyCode checkKey = InputManager.getPressedKey();
-            if(checkKey != null){
-                //System.out.println(InputManager.getPressedKey());
-                if(checkKey.toString().equals("ESCAPE")){
-                    isGamePaused = true;
-                    if(isGamePaused){
-                        Platform.runLater(
-                                () -> {
-                                    Parent root = EscapeMap.getEscapeMap().pauseGame(true);
-                                    Main.getPrimaryStage().getScene().setRoot(root);
-                                }
-                        );
-
-                    }
                 }
             }
         }catch (Exception e){
@@ -101,35 +40,25 @@ public class EscapeEngine implements Runnable{
         }
     }
 
-    public static void setGameEngine(EscapeEngine gameEngine) {
-        EscapeEngine.gameEngine = gameEngine;
-    }
-
-    public static EscapeEngine getGameEngine(){
-        if(gameEngine == null){
-            gameEngine = new EscapeEngine();
-        }
-        return gameEngine;
-    }
-
-    public void checkCollision(){
+    @Override
+    public void checkCollision() throws FileNotFoundException {
         boolean flag;
 
         ArrayList<Obstacle> obstacles;
-        ArrayList<PrisonGuardian> guardians;
+        ArrayList<SmallEnemy> guardians;
         ArrayList<Trap> traps;
-        ArrayList<EscapePowerUp> powerUps;
+        ArrayList<PowerUp> powerUps;
 
-        obstacles = EscapeMap.getEscapeMap().getVisibleObstacles();
-        guardians = EscapeMap.getEscapeMap().getVisibleGuardians();
-        traps = EscapeMap.getEscapeMap().getVisibleTraps();
-        powerUps = EscapeMap.getEscapeMap().getVisiblePowerUps();
+        obstacles = mapFactory.getEscapeMap().getVisibleObstacles();
+        guardians = mapFactory.getEscapeMap().getVisibleGuardians();
+        traps = mapFactory.getEscapeMap().getVisibleTraps();
+        powerUps = mapFactory.getEscapeMap().getVisiblePowerUps();
 
-        Skeleton hero = EscapeMap.getEscapeMap().getHero();
+        Skeleton hero = mapFactory.getEscapeMap().heroFactory.getSkeleton();
 
         for (Obstacle obstacle : obstacles) {
             try {
-                flag = cm.checkGameObjectCollision(obstacle, EscapeMap.getEscapeMap().getHero());
+                flag = cm.checkGameObjectCollision(obstacle, hero);
                 if (flag) {
                     if(hero.getXPos() <= obstacle.getXPos()) {
                         hero.setLocation(hero.getXPos() - 2, hero.getYPos());
@@ -142,9 +71,9 @@ public class EscapeEngine implements Runnable{
             }
         }
 
-        for (PrisonGuardian guardian : guardians) {
+        for (SmallEnemy guardian : guardians) {
             try {
-                flag = cm.checkGameObjectCollision(guardian, EscapeMap.getEscapeMap().getHero());
+                flag = cm.checkGameObjectCollision(guardian, hero);
                 if (flag) {
                     hero.setDead(true);
                 }
@@ -155,7 +84,7 @@ public class EscapeEngine implements Runnable{
 
         for (Trap trap : traps) {
             try {
-                flag = cm.checkGameObjectCollision(trap, EscapeMap.getEscapeMap().getHero());
+                flag = cm.checkGameObjectCollision(trap, hero);
                 if (flag) {
                     if(hero.isShielded()){
                         hero.setShielded(false);
@@ -169,9 +98,9 @@ public class EscapeEngine implements Runnable{
             }
         }
 
-        for (EscapePowerUp powerUp : powerUps) {
+        for (PowerUp powerUp : powerUps) {
             try {
-                flag = cm.checkGameObjectCollision(powerUp, EscapeMap.getEscapeMap().getHero());
+                flag = cm.checkGameObjectCollision(powerUp, hero);
                 if (flag) {
                     powerUp.setLocation(0, 0);
                     switch (powerUp.getID()) {

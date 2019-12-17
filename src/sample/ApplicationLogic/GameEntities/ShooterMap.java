@@ -10,97 +10,44 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import sample.UserInterface.Screen.GameEndPane;
 import sample.UserInterface.Screen.Main;
-import sample.UserInterface.Screen.PauseMenu;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-public class Map implements Runnable{
-    private Parent root;
+public class ShooterMap extends AbstractMap {
     private int score;
     private Text head;
-    private Parent pauseRoot;
     private final String FIRST_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\dark-castle.png";
     private final String SECOND_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\old-castle.jpg";
     private final String THIRD_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\destroyed-castle.jpg";
     private final String[] backgroundImages = {FIRST_LEVEL_BACKGROUND_IMAGE, SECOND_LEVEL_BACKGROUND_IMAGE, THIRD_LEVEL_BACKGROUND_IMAGE};
     private static int mapLevel;
-    private static boolean level1Completed;
-    private static boolean level2Completed;
-    private static Map map;
-    private static boolean level3Completed;
     private int deadCount;
     private Thread t;
     private int totalCountOfEnemies;
     private BackgroundImage backgroundImage;
     private ObjectRandomLocationManager locationManager;
-    private ArrayList<GameObject> gameObjects;
-    private Hero hero;
-    private int powerUpDisappeared;
-    private AnimationTimer at;
+    private Mage mage;
 
-    public void setSurvivalMode(boolean survivalMode) {
-        this.survivalMode = survivalMode;
+    public void setScore(int score) {
+        this.score += score;
     }
 
-    private boolean survivalMode = false;
-
-    public static boolean isLevel1Completed() {
-        return level1Completed;
-    }
-
-    public static void setLevel1Completed(boolean level1Completed) {
-        Map.level1Completed = level1Completed;
-    }
-
-    public static boolean isLevel2Completed() {
-        return level2Completed;
-    }
-
-    public static void setLevel2Completed(boolean level2Completed) {
-        Map.level2Completed = level2Completed;
-    }
-
-    public static boolean isLevel3Completed() {
-        return level3Completed;
-    }
-
-    public static void setLevel3Completed(boolean level3Completed) {
-        Map.level3Completed = level3Completed;
-    }
-
-
-    public int getScore() {
-        return score;
-    }
-
-    public void run(){
-        try{
-            while(true && survivalMode){
-                setEnemyForSurvival();
-                Thread.sleep(3000);
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-    private Map(){
-        this.mapLevel = 1;
+    public ShooterMap(){
+        mapLevel = 1;
         root = new GridPane();
         gameObjects = new ArrayList<>();
         locationManager = new ObjectRandomLocationManager();
         setBackgroundImage(FIRST_LEVEL_BACKGROUND_IMAGE);
         setEnemies();
-        pauseRoot = PauseMenu.getInstance().getRoot();
         try{
-            hero = Hero.getHero();
+            mage = heroFactory.getMage();
         }catch (Exception e){
             e.printStackTrace();
         }
         score = 0;
     }
 
+    @Override
     public void clearGameObjects(){
         totalCountOfEnemies = 0;
         gameObjects.clear();
@@ -113,39 +60,8 @@ public class Map implements Runnable{
         ((GridPane)this.root).setBackground(new Background(this.backgroundImage));
         ((GridPane)this.root).setPrefSize(852,480);
     }
-    public int getMapLevel() {
-        return mapLevel;
-    }
 
-    public void setMapLevel(int mapLevel) {
-        this.mapLevel = mapLevel;
-    }
-
-
-    public void setEnemyForSurvival(){
-        try{
-            Random rand = new Random();
-            GameObject gameObject;
-            locationManager.generateLocation(750, 2700, 100, 300);
-            double x = locationManager.getX();
-            double y = locationManager.getY();
-
-            int num = rand.nextInt(2);
-            if(num == 0){
-                gameObject = new SmallEnemy(x, y, false, mapLevel);
-            }
-            else{
-                gameObject = new BigEnemy(x, y, mapLevel);
-            }
-            gameObjects.add(gameObject);
-            totalCountOfEnemies++;
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-
-
+    @Override
     public void setEnemies(){
         try{
             gameObjects.clear();
@@ -175,7 +91,7 @@ public class Map implements Runnable{
                         locationManager.generateLocation(750, 1100, 50, 370);
                         double x = locationManager.getX();
                         double y = locationManager.getY();
-                        gameObject = new SmallEnemy(x, y, true, mapLevel);
+                        gameObject = new SmallEnemy(x, y, true);
                         gameObjects.add(gameObject);
                     }
                     else{
@@ -191,7 +107,7 @@ public class Map implements Runnable{
                             locationManager.generateLocation(1100, 3500, 50, 370);
                             double x = locationManager.getX();
                             double y = locationManager.getY();
-                            gameObject = new SmallEnemy(x, y, false, mapLevel);
+                            gameObject = new SmallEnemy(x, y, false);
                             gameObjects.add(gameObject);
                         }
 
@@ -206,7 +122,6 @@ public class Map implements Runnable{
 
                 }
             }
-            //System.out.println(count);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -215,36 +130,26 @@ public class Map implements Runnable{
 
     public void update(){
         for(int i = 0; i < gameObjects.size(); i++){
-            try {
-                if(gameObjects.get(i).toString().equals("Big Enemy") || gameObjects.get(i).toString().equals("Small Enemy") || gameObjects.get(i).toString().equals("Boss")){
-                    Enemy enemy = ((Enemy) gameObjects.get(i));
-                    /*if(enemy.getXPos() < 800 && enemy.getYPos() < 480)
-                        enemy.setVisible(true);*/
-                    if(enemy.getHealth() <= 0 || enemy.getXPos() <= 0 || enemy.getYPos() < 0){
-                        //gameObjects.get(i).disappearAnimation();
-                        gameObjects.remove(i);
-                        deadCount++;
-                    }
+            if(gameObjects.get(i).toString().equals("Big Enemy") || gameObjects.get(i).toString().equals("Small Enemy") || gameObjects.get(i).toString().equals("Boss")){
+                Enemy enemy = ((Enemy) gameObjects.get(i));
+                if(enemy.getHealth() <= 0 || enemy.getXPos() <= 0 || enemy.getYPos() < 0){
+                    gameObjects.remove(i);
+                    deadCount++;
                 }
-                else if(gameObjects.get(i).toString().equals("Power Up")){
-                    PowerUp powerUp = (PowerUp)gameObjects.get(i);
-                    //System.out.println(powerUp.getXPos());
-                    if(powerUp.getXPos() <= 0 || powerUp.getYPos() <= 0 || powerUp.isUsed()){
-                        gameObjects.remove(i);
-                        powerUpDisappeared++;
-                    }
-                }
-                //if()
-            }catch (Exception e){
-
             }
+            else if(gameObjects.get(i).toString().equals("Power Up")){
+                PowerUp powerUp = (PowerUp)gameObjects.get(i);
+                if(powerUp.getXPos() <= 0 || powerUp.getYPos() <= 0 || powerUp.isUsed()){
+                    gameObjects.remove(i);
+                }
+            }
+
         }
         if(deadCount == totalCountOfEnemies) {
             updateMap();
         }
-
-        //System.out.println(deadCount);
     }
+
     public void updateMap(){
         setBackgroundImage(backgroundImages[mapLevel]);
         if(mapLevel == 1){
@@ -255,55 +160,22 @@ public class Map implements Runnable{
         }
         else{
             Platform.runLater(
-                    () -> {
-                        Main.getPrimaryStage().setScene(GameEndPane.getInstance().getScene());
-                    }
+                    () -> Main.getPrimaryStage().setScene(GameEndPane.getInstance().getScene())
             );
         }
         deadCount = 0;
         setEnemies();
     }
-    public void updateMapSurvival() {
-        if(t == null){
-            t = new Thread(this);
-            t.start();
-        }
-        int count = gameObjects.size();
-        for (int i = 0; i < count; i++) {
-            try {
-                if (gameObjects.get(i).toString().equals("Big Enemy") || gameObjects.get(i).toString().equals("Small Enemy") || gameObjects.get(i).toString().equals("Boss")) {
-                    Enemy enemy = ((Enemy) gameObjects.get(i));
-                    /*if(enemy.getXPos() < 800 && enemy.getYPos() < 480)
-                        enemy.setVisible(true);*/
-                    if (enemy.getHealth() <= 0 || enemy.getXPos() <= 0 || enemy.getYPos() < 0) {
-                        //gameObjects.get(i).disappearAnimation();
-                        gameObjects.remove(i);
-                        totalCountOfEnemies--;
-                    }
-                }
-            }
-            //if()
-            catch (Exception e) {
 
-            }
-        }
-    }
 
-    public int getTotalObjects() {
-        return gameObjects.size();
-    }
-
+    @Override
     public void createContent(){
         try{
 
-            //Creating an image
-            // Image image = new Image(new FileInputStream("C:\\Users\\SnowPlace\\IdeaProjects\\Demofx_1\\src\\sample\\Enemy_Crab.png"));
             Canvas canvas = new Canvas(850, 480);
             ((GridPane)root).getChildren().add( canvas );
-
             GraphicsContext gc = canvas.getGraphicsContext2D();
 
-            //double lastNanoTime = System.nanoTime();
             at = new AnimationTimer()
             {
                 double lastNanoTime = System.nanoTime();
@@ -313,58 +185,35 @@ public class Map implements Runnable{
                         head.setText("Score: " + score);
                         head.setFill(Color.WHITE);
 
-                        //update();
-                        // calculate time since last update.
                         double elapsedTime = (currentNanoTime - lastNanoTime) / 1000000000.0;
                         lastNanoTime = currentNanoTime;
 
-                        // draw
-
                         gc.clearRect(0, 0, 850,480);
 
-                        hero.update(elapsedTime);
-                        hero.draw(gc);
-                        hero.controlSubmarine();
-                        for(int k = 0; k < hero.getBullets().size(); k++){
-                            hero.getBullets().get(k).update(elapsedTime);
-                            hero.getBullets().get(k).draw(gc);
+                        mage.update(elapsedTime);
+                        mage.draw(gc);
+                        mage.controlHero();
+                        for(int k = 0; k < mage.getBullets().size(); k++){
+                            mage.getBullets().get(k).update(elapsedTime);
+                            mage.getBullets().get(k).draw(gc);
                         }
-                        System.out.println(hero.getAttackSpeed());
-                        if(!survivalMode){
-                            for(int i = 0;i < gameObjects.size(); i++){
+                        System.out.println(mage.getAttackSpeed());
 
-
-                                gameObjects.get(i).update(elapsedTime);
-
-                                gameObjects.get(i).draw(gc);
-                                if(gameObjects.get(i).toString().equals("Big Enemy")){
-                                    ((BigEnemy)gameObjects.get(i)).shoot();
-                                    for(int j = 0; j < ((BigEnemy)gameObjects.get(i)).getBullets().size(); j++){
-                                        ((BigEnemy)gameObjects.get(i)).getBullets().get(j).update(elapsedTime);
-                                        ((BigEnemy)gameObjects.get(i)).getBullets().get(j).draw(gc);
-                                    }
-                                }
-                                if(gameObjects.get(i).toString().equals("Boss")){
-                                    ((Boss)gameObjects.get(i)).useAbility();
-                                    for(int j = 0; j < ((Boss)gameObjects.get(i)).getBullets().size(); j++){
-                                        ((Boss)gameObjects.get(i)).getBullets().get(j).update(elapsedTime);
-                                        ((Boss)gameObjects.get(i)).getBullets().get(j).draw(gc);
-                                    }
+                        for(int i = 0;i < gameObjects.size(); i++){
+                            gameObjects.get(i).update(elapsedTime);
+                            gameObjects.get(i).draw(gc);
+                            if(gameObjects.get(i).toString().equals("Big Enemy")){
+                                ((BigEnemy)gameObjects.get(i)).shoot();
+                                for(int j = 0; j < ((BigEnemy)gameObjects.get(i)).getBullets().size(); j++){
+                                    ((BigEnemy)gameObjects.get(i)).getBullets().get(j).update(elapsedTime);
+                                    ((BigEnemy)gameObjects.get(i)).getBullets().get(j).draw(gc);
                                 }
                             }
-                        }
-                        else{
-                            for(int i = 0; i < totalCountOfEnemies; i++){
-                                gameObjects.get(i).update(elapsedTime);
-
-                                gameObjects.get(i).draw(gc);
-                                if(gameObjects.get(i).toString().equals("Big Enemy")){
-                                    //System.out.println("entered");
-                                    ((BigEnemy)gameObjects.get(i)).shoot();
-                                    for(int j = 0; j < ((BigEnemy)gameObjects.get(i)).getBullets().size(); j++){
-                                        ((BigEnemy)gameObjects.get(i)).getBullets().get(j).update(elapsedTime);
-                                        ((BigEnemy)gameObjects.get(i)).getBullets().get(j).draw(gc);
-                                    }
+                            if(gameObjects.get(i).toString().equals("Boss")){
+                                ((Boss)gameObjects.get(i)).useAbility();
+                                for(int j = 0; j < ((Boss)gameObjects.get(i)).getBullets().size(); j++){
+                                    ((Boss)gameObjects.get(i)).getBullets().get(j).update(elapsedTime);
+                                    ((Boss)gameObjects.get(i)).getBullets().get(j).draw(gc);
                                 }
                             }
                         }
@@ -372,7 +221,6 @@ public class Map implements Runnable{
                     }catch (Exception e){
                         e.printStackTrace();
                     }
-
                 }
             };
             at.start();
@@ -402,15 +250,6 @@ public class Map implements Runnable{
         return root;
     }
 
-    public static void setMap(Map map) {
-        Map.map = map;
-    }
-
-    public void setScore(int score) {
-        this.score = this.score + score;
-
-    }
-
     public GameObject getGameObject(double x, double y){
         GameObject returnval = null;
         for(int i = 0; i < gameObjects.size(); i++){
@@ -430,15 +269,6 @@ public class Map implements Runnable{
                         enemies.add((Enemy)gameObjects.get(i));
         }
         return enemies;
-    }
-    public static Map getMap(){
-        if(map == null)
-            map = new Map();
-        return map;
-    }
-
-    public Hero getHero() {
-        return hero;
     }
 
     public ArrayList<PowerUp> getVisiblePowerUps(){
@@ -463,4 +293,8 @@ public class Map implements Runnable{
         return pauseRoot;
     }
 
+    @Override
+    public void run() {
+
+    }
 }

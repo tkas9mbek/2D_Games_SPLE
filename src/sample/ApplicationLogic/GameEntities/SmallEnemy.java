@@ -2,38 +2,58 @@ package sample.ApplicationLogic.GameEntities;
 
 import javafx.scene.image.Image;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class SmallEnemy extends Enemy {
 
+    private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
+
     private final String GOBLIN = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\goblin.png";
     private final String ORC = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\orc.png";
+    private final String SPEARMAN = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\swordsman.png";
 
     // map level constructor
-    SmallEnemy( double xPos, double yPos, boolean visible, int mapLvl) throws FileNotFoundException {
-        int choice = (int) (Math.random() * 2) + 1;
-
+    SmallEnemy( double xPos, double yPos, boolean visible) throws FileNotFoundException {
         setLocation(xPos, yPos);
         setVisible(visible);
 
-        if (choice == 1) {
-            setVelocity(-155, 0);
-            setSpriteImage(new Image(new FileInputStream(GOBLIN)));
-            setHealth(15 + 5 * mapLvl);
-            setCollisionDmg(10 + 5 * mapLvl);
-            setExperiencePrize(20 + 10 * mapLvl);
-            setScorePrize( 20 + 10 * mapLvl);
-        } else {
-            setVelocity(-90, (int)((Math.random() * -66) + 33));
-            setSpriteImage(new Image(new FileInputStream(ORC)));
-            setHealth(20 + 10 * mapLvl);
-            setCollisionDmg(20 + 10 * mapLvl);
-            setExperiencePrize(50 + 25 * mapLvl);
-            setScorePrize(50 + 25 * mapLvl);
+        File file = new File(CONFIGURATION_FILE);
+        Scanner sc = new Scanner(file);
+        String game = sc.next();
+
+        System.out.println(game);
+
+        if( game.equals("Escape")) {
+            setLocation(xPos, yPos);
+            setVisible(visible);
+            setVelocity(0, 0);
+            setSpriteImage(new Image(new FileInputStream(SPEARMAN)));
+            setHealth(100000000);
+            setType("Guardian");
         }
 
-        setType("Small Enemy");
+        if( game.equals("Shooter") ) {
+            int choice = (int) (Math.random() * 2) + 1;
+            if (choice == 1) {
+                setVelocity(-155, 0);
+                setSpriteImage(new Image(new FileInputStream(GOBLIN)));
+                setHealth(20);
+                setCollisionDmg(20);
+                setExperiencePrize(30);
+                setScorePrize(30);
+            } else {
+                setVelocity(-90, (int) ((Math.random() * -66) + 33));
+                setSpriteImage(new Image(new FileInputStream(ORC)));
+                setHealth(40);
+                setCollisionDmg(40);
+                setExperiencePrize(50);
+                setScorePrize(50);
+            }
+            setType("Small Enemy");
+        }
     }
 
     @Override

@@ -7,23 +7,17 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import sample.UserInterface.Screen.PauseMenu;
 
 import java.util.ArrayList;
 
-public class EscapeMap implements Runnable{
-    private Parent root;
+public class EscapeMap extends AbstractMap {
     private double score;
     private Text head;
-    private Parent pauseRoot;
     private final String SECOND_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\prison2.jpg";
-    private static EscapeMap map;
     private Thread t;
     private BackgroundImage backgroundImage;
     private ObjectRandomLocationManager locationManager;
-    private ArrayList<GameObject> gameObjects;
     private Skeleton hero;
-    private AnimationTimer at;
 
     public double getScore() {
         return score;
@@ -32,23 +26,18 @@ public class EscapeMap implements Runnable{
     public void run(){
     }
 
-    private EscapeMap(){
+    public EscapeMap(){
         root = new GridPane();
         gameObjects = new ArrayList<>();
         locationManager = new ObjectRandomLocationManager();
         setBackgroundImage(SECOND_LEVEL_BACKGROUND_IMAGE);
         setEnemies();
-        pauseRoot = PauseMenu.getInstance().getRoot();
         try{
-            hero = Skeleton.getHero();
+            hero = heroFactory.getSkeleton();
         }catch (Exception e){
             e.printStackTrace();
         }
         score = 0;
-    }
-
-    public void clearGameObjects(){
-        gameObjects.clear();
     }
 
     public void setBackgroundImage(String backgroundImage){
@@ -66,8 +55,8 @@ public class EscapeMap implements Runnable{
             double yLoc = 25;
             double x;
 
-            for(int i = 0; i < 400; i = i + 125) {
-                gameObject = new PrisonGuardian(1, i, true);
+            for(int i = 5; i < 400; i = i + 120) {
+                gameObject = new SmallEnemy(5, i, true);
                 gameObjects.add(gameObject);
             }
             for(int i = 800; i < 50000;) {
@@ -94,12 +83,12 @@ public class EscapeMap implements Runnable{
                     gameObjects.add(gameObject);
                 } else if (choice < 17) {
                     locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
-                    gameObject = new EscapePowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1));
+                    gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), 0);
                     gameObject.setVisible(false);
                     gameObjects.add(gameObject);
                 } else {
                     locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
-                    gameObject = new EscapePowerUp(locationManager.getX(), locationManager.getY(), 3);
+                    gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), 3, 0);
                     gameObject.setVisible(false);
                     gameObjects.add(gameObject);
                 }
@@ -143,7 +132,7 @@ public class EscapeMap implements Runnable{
                         gc.clearRect(0, 0, 850,480);
                         hero.update(elapsedTime);
                         hero.draw(gc);
-                        hero.controlSubmarine();
+                        hero.controlHero();
 
                         for (GameObject gameObject : gameObjects) {
                             gameObject.update(elapsedTime);
@@ -162,10 +151,6 @@ public class EscapeMap implements Runnable{
         }
     }
 
-    public void setRoot(Parent root) {
-        this.root = root;
-    }
-
     public Parent load(){
         root.getStylesheets().add("sample/UserInterface/Screen/style.css");
         createContent();
@@ -179,14 +164,6 @@ public class EscapeMap implements Runnable{
         }
         ((GridPane)root).getChildren().add(head);
         return root;
-    }
-
-    public static void setMap(EscapeMap map) {
-        EscapeMap.map = map;
-    }
-
-    public void setScore(int score) {
-        this.score = this.score + score;
     }
 
     public GameObject getGameObject(double x, double y){
@@ -210,14 +187,14 @@ public class EscapeMap implements Runnable{
         }
         return obstacles;
     }
-    public ArrayList<PrisonGuardian> getVisibleGuardians(){
-        ArrayList <PrisonGuardian> guardians = new ArrayList<>();
+    public ArrayList<SmallEnemy> getVisibleGuardians(){
+        ArrayList <SmallEnemy> guardians = new ArrayList<>();
         int count = gameObjects.size();
         for(int i = 0; i < count; i++){
             if(gameObjects.get(i) != null)
                 if(gameObjects.get(i).isVisible())
                     if(gameObjects.get(i).toString().equals("Guardian"))
-                        guardians.add((PrisonGuardian)gameObjects.get(i));
+                        guardians.add((SmallEnemy)gameObjects.get(i));
         }
         return guardians;
     }
@@ -233,24 +210,14 @@ public class EscapeMap implements Runnable{
         return traps;
     }
 
-    public static EscapeMap getEscapeMap(){
-        if(map == null)
-            map = new EscapeMap();
-        return map;
-    }
-
-    public Skeleton getHero() {
-        return hero;
-    }
-
-    public ArrayList<EscapePowerUp> getVisiblePowerUps(){
-        ArrayList <EscapePowerUp> powerUps = new ArrayList<>();
+    public ArrayList<PowerUp> getVisiblePowerUps(){
+        ArrayList <PowerUp> powerUps = new ArrayList<>();
         int count = gameObjects.size();
         for(int i = 0; i < count; i++){
             if(gameObjects.get(i) != null)
                 if(gameObjects.get(i).isVisible())
                     if(gameObjects.get(i).toString().equals("Power Up"))
-                        powerUps.add((EscapePowerUp) gameObjects.get(i));
+                        powerUps.add((PowerUp) gameObjects.get(i));
         }
         return powerUps;
     }

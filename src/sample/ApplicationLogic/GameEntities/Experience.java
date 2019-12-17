@@ -72,7 +72,7 @@ public class Experience {
             throw new IndexOutOfBoundsException("Not valid subLevel value");
     }
 
-    public void update( int increaseAmount, Hero sub) throws FileNotFoundException {
+    public void update( int increaseAmount, Mage sub) throws FileNotFoundException {
         subLevel = sub.getSubLevel();
         setCurExperience( curExperience + increaseAmount);
         expBar.setSpriteImage( EXPBAR[ (curExperience + 1 ) / (maxExperience / (imageSize - 1) )]);
