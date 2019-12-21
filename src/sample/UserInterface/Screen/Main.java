@@ -13,6 +13,7 @@ import sample.ApplicationLogic.GameManagement.SoundEngine;
 import sample.UserInterface.InputManagement.InputManager;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -84,7 +85,12 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent e){
-        Parent root1 = sm.update(((Button)(e.getSource())).getText());
+        Parent root1 = null;
+        try {
+            root1 = sm.update(((Button)(e.getSource())).getText());
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
         if(((Button)(e.getSource())).getText().equals("Quit Game")){
             primaryStage.close();
             System.exit(0);

@@ -20,7 +20,7 @@ public class Mage extends AbstractHero {
     private Health health;
     private Energy energy;
     private Experience experience;
-    private SkillManager skills;
+    private MageSkillBuilder skills;
     private int amountOfProjectile;
     private double attackSpeed;
     private double attackCooldown;
@@ -32,7 +32,7 @@ public class Mage extends AbstractHero {
         setSubLevel(lvl);
         setSpriteImage( new Image(new FileInputStream(avatar)));
         updateStats();
-        skills = new SkillManager(subLevel);
+        skills = new MageSkillBuilder(subLevel);
         experience = new Experience( lvl);
         bullets = new ArrayList<>();
     }
@@ -148,7 +148,6 @@ public class Mage extends AbstractHero {
                 }
             }
             attackCooldown = attackSpeed;
-            SoundEngine.getInstance().playSound(1);
         }
     }
 

@@ -2,14 +2,18 @@ package sample.ApplicationLogic.GameEntities;
 
 import javafx.scene.image.Image;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BigEnemy extends Enemy{
 
     private final String ARCHER = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\archer.png";
     private final String MAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\dark-mage.png";
+    private final String LUMBERJACK = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\lumberjack.png";
+    private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
 
     private double attackSpeed;
     private double shootCooldown;
@@ -38,31 +42,45 @@ public class BigEnemy extends Enemy{
     public BigEnemy(double xPos, double yPos, int mapLvl) throws FileNotFoundException {
         super(xPos, yPos);
 
-        int choice = (int) (Math.random() * 2) + 1;
-        type = choice;
+        File file = new File(CONFIGURATION_FILE);
+        Scanner sc = new Scanner(file);
+        String game = sc.next();
 
-        if (choice == 1) {
-            // create Jelly
-            setVelocity(-15, (int) (Math.random() * -70) + 35);
-            setSpriteImage(new Image(new FileInputStream(MAGE)));
-            setHealth(60 + 35 * mapLvl);
-            setCollisionDmg(20 + 10 * mapLvl);
-            setExperiencePrize(150 + 50 * mapLvl);
-            setScorePrize( 150 + 50 * mapLvl);
-            setAttackDamage(9 + 3 * mapLvl);
-            setAmountOfProjectile(3);
-            setAttackSpeed(5);
-        } else {
-            // create Sea horse
-            setVelocity(-15, (int) (Math.random() * -35) + 17);
-            setSpriteImage(new Image(new FileInputStream(ARCHER)));
-            setHealth(45 + 30 * mapLvl);
-            setCollisionDmg(20 + 15 * mapLvl);
-            setExperiencePrize(100 + 25 * mapLvl);
-            setScorePrize( 100 + 25 * mapLvl);
-            setAttackDamage(10 + 8 * mapLvl);
+        if( game.equals("Shooter")) {
+            int choice = (int) (Math.random() * 2) + 1;
+            type = choice;
+            if (choice == 1) {
+                // create Jelly
+                setVelocity(-15, (int) (Math.random() * -70) + 35);
+                setSpriteImage(new Image(new FileInputStream(MAGE)));
+                setHealth(60 + 35 * mapLvl);
+                setCollisionDmg(20 + 10 * mapLvl);
+                setExperiencePrize(75 + 50 * mapLvl);
+                setScorePrize(75 + 50 * mapLvl);
+                setAttackDamage(9 + 3 * mapLvl);
+                setAmountOfProjectile(3);
+                setAttackSpeed(5);
+            } else {
+                // create Sea horse
+                setVelocity(-15, (int) (Math.random() * -35) + 17);
+                setSpriteImage(new Image(new FileInputStream(ARCHER)));
+                setHealth(45 + 30 * mapLvl);
+                setCollisionDmg(20 + 15 * mapLvl);
+                setExperiencePrize(75 + 25 * mapLvl);
+                setScorePrize(75 + 25 * mapLvl);
+                setAttackDamage(10 + 8 * mapLvl);
+                setAmountOfProjectile(1);
+                setAttackSpeed(2.5);
+            }
+        }
+        if( game.equals("Quest")) {
+            setSpriteImage(new Image(new FileInputStream(LUMBERJACK)));
+            setHealth(250);
+            setVelocity(0, -50);
+            setAttackDamage(33);
             setAmountOfProjectile(1);
-            setAttackSpeed(2.5);
+            setAttackSpeed(3);
+            type = 3;
         }
         setType("Big Enemy");
         bullets = new ArrayList<>();
@@ -120,11 +138,11 @@ public class BigEnemy extends Enemy{
                     arr[i] = getYPos() + (getSpriteImage().getHeight()/2) + (25 * (int)(( i - 1)  / 2) * Math.pow(-1, i - 1));
                     Bullet x;
 
-                    if(type == 1) {
-                         x = new Bullet(arr[1], arr[i], attackDamage, 2);
-                    } else {
-                        x = new Bullet(arr[1], arr[i], attackDamage, 3);
-                    }
+                        if (type == 1) {
+                            x = new Bullet(arr[1], arr[i], attackDamage, 2);
+                        } else {
+                            x = new Bullet(arr[1], arr[i], attackDamage, 3);
+                        }
 
                     bullets.add(x);
                 }

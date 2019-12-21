@@ -62,8 +62,7 @@ public class ShooterEngine extends AbstractEngine{
                     hero.healthDecrease(1);
                     enemy.decreaseHealth(1);
                 }
-                for (int j = 0; j < hero
-                        .getBullets().size() && !flag; j++) {
+                for (int j = 0; j < hero.getBullets().size() && !flag; j++) {
                     flag = cm.checkGameObjectCollision(enemy, hero.getBullets().get(j));
                     if (flag) {
                         enemy.decreaseHealth(hero.getBullets().get(j).getDamage());
@@ -81,19 +80,15 @@ public class ShooterEngine extends AbstractEngine{
                     else
                         bullets = ((Boss) enemy).getBullets();
                     for (int j = 0; j < bullets.size() && !flag; j++) {
-                        flag = cm.checkGameObjectCollision(hero
-                                , bullets.get(j));
+                        flag = cm.checkGameObjectCollision(hero, bullets.get(j));
                         if (flag) {
                             if (enemy.toString().equals("Big Enemy")) {
-                                hero
-                                        .healthDecrease(((BigEnemy) enemy).getBullets().get(j).getDamage());
+                                hero.healthDecrease(((BigEnemy) enemy).getBullets().get(j).getDamage());
                                 ((BigEnemy) enemy).getBullets().remove(j);
                             } else {
-                                hero
-                                        .healthDecrease(((Boss) enemy).getBullets().get(j).getDamage());
+                                hero.healthDecrease(((Boss) enemy).getBullets().get(j).getDamage());
                                 ((Boss) enemy).getBullets().remove(j);
                             }
-
                         }
                     }
                 }

@@ -12,6 +12,8 @@ public class Skill {
     private static final String SKILL1_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\diamond.png";
     private static final String SKILL2_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\fire.png";
     private static final String SKILL3_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\shield.png";
+    private static final String SKILL4_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\multishot.png";
+    private static final String SKILL5_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\regeneration.png";
     private static final String SHIELDED = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\shielded.png";
     private static final String MAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\mage.png";
 
@@ -28,22 +30,22 @@ public class Skill {
     private boolean onEffect;
     private boolean onCooldown;
     private int energyCost;
-    private int subLvl;
+    private int mageLvl;
 
     //Constructor
-    public Skill(int ID, int subLvl) throws FileNotFoundException {
+    public Skill(int ID, int mageLvl) throws FileNotFoundException {
         setSkillID( ID);
-        object = new GameObject(15 + 57 * (ID - 1), 428);
+        object = new GameObject(15 + 57 * ( (ID - 1) % 3), 428);
         object.setSpriteImage(new Image( new FileInputStream(LOCKED_IMAGE)));
-        updateStats(subLvl);
+        updateStats(mageLvl);
         setTimeOfEffect(0);
         setCooldownTime(0);
         setOnEffect();
     }
 
     //Methods
-    private void updateStats( int subLvl) {
-        this.subLvl = subLvl;
+    private void updateStats( int mageLvl) {
+        this.mageLvl = mageLvl;
         if( skillID == 1){
             maxEffectTime = 10;
             maxCooldownTime = 25;
@@ -59,36 +61,59 @@ public class Skill {
             maxCooldownTime = 28;
             setEnergyCost(40);
         }
-        setUnlocked(subLvl);
+        setUnlocked(mageLvl);
     }
 
-    public void waterFireballs(Mage sub) throws FileNotFoundException {
+    private void updateStats() {
+        if( skillID == 4){
+            maxEffectTime = 0;
+            maxCooldownTime = 10;
+            setEnergyCost(0);
+        }
+        if( skillID == 5){
+            maxEffectTime = 0;
+            maxCooldownTime = 28;
+            setEnergyCost(0);
+        }
+    }
+
+
+        public void waterFireballs(Mage mage) throws FileNotFoundException {
         useSkill();
-        finalAttack = sub.getAttackDamage();
-        sub.setAmountOfProjectile(subLvl + 1);
-        sub.setAttackDamage(11);
+        finalAttack = mage.getAttackDamage();
+        mage.setAmountOfProjectile(mageLvl + 1);
+        mage.setAttackDamage(11);
         setOnEffect();
         setTimeOfEffect( maxEffectTime);
     }
 
-    public void speedBooster(Mage sub) throws FileNotFoundException {
+    public void speedBooster(Mage mage) throws FileNotFoundException {
         useSkill();
-        sub.setAttackSpeed( 0.4 );
+        mage.setAttackSpeed( 0.4 );
         setOnEffect();
         setTimeOfEffect( maxEffectTime);
     }
-    public void invulnerability(Mage sub) throws FileNotFoundException {
+    public void invulnerability(Mage mage) throws FileNotFoundException {
         useSkill();
         setOnEffect();
         setTimeOfEffect( maxEffectTime);
-        sub.setSpriteImage( new Image( new FileInputStream(SHIELDED)));
+        mage.setSpriteImage( new Image( new FileInputStream(SHIELDED)));
+    }
+
+    public void multishot(Hunter hunter) throws FileNotFoundException {
+        useSkill();
+        hunter.setMultishot(5);
+    }
+
+    public void regeneration(Hunter hunter) throws FileNotFoundException {
+        useSkill();
+        hunter.regenHealth(30);
     }
 
     public void useSkill() throws FileNotFoundException {
         setCooldownTime( maxCooldownTime);
         object.setSpriteImage( new Image( new FileInputStream(COOLDOWN_IMAGE)));
     }
-
 
     public int getEnergyCost() {
         return energyCost;
@@ -111,21 +136,18 @@ public class Skill {
             this.timeOfEffect = timeOfEffect;
     }
 
-    public void updateTimeEffect(double time, Mage sub) throws FileNotFoundException {
+    public void updateTimeEffect(double time, Mage mage) throws FileNotFoundException {
         setTimeOfEffect( timeOfEffect - time);
         if( timeOfEffect <= 0){
             if( skillID == 1){
-                sub.setAmountOfProjectile( 1);
-                sub.setAttackDamage(finalAttack);
-                object.setSpriteImage( new Image( new FileInputStream(COOLDOWN_IMAGE)));
+                mage.setAmountOfProjectile( 1);
+                mage.setAttackDamage(finalAttack);
             }
             if( skillID == 2){
-                sub.setAttackSpeed( 0.8);
-                object.setSpriteImage( new Image( new FileInputStream(COOLDOWN_IMAGE)));
+                mage.setAttackSpeed( 0.8);
             }
             if( skillID == 3){
-                object.setSpriteImage( new Image( new FileInputStream(COOLDOWN_IMAGE)));
-                sub.setSpriteImage( new Image( new FileInputStream(MAGE)));
+                mage.setSpriteImage( new Image( new FileInputStream(MAGE)));
             }
         }
     }
@@ -164,21 +186,26 @@ public class Skill {
         return unlocked;
     }
 
-    public void setUnlocked(int subLevel) {
-        unlocked = subLevel >= skillID;
+    public void setUnlocked(int mageLevel) {
+        unlocked = mageLevel >= skillID;
     }
 
     public void draw(GraphicsContext g){
         object.draw( g);
     }
 
-    public void update( double time, Mage sub) throws FileNotFoundException {
-        if( sub.getSubLevel() != subLvl){
-            updateStats( sub.getSubLevel());
+    public void update( double time, Mage mage) throws FileNotFoundException {
+        if(mage != null) {
+            if (mage.getSubLevel() != mageLvl) {
+                updateStats(mage.getSubLevel());
+            }
+            if( isOnEffect()){
+                updateTimeEffect( time, mage);
+            }
+        } else{
+            updateStats(5);
         }
-        if( isOnEffect()){
-            updateTimeEffect( time, sub);
-        }
+
         if( !isOnCooldown()){
             restoreImages();
         }else{
@@ -197,6 +224,12 @@ public class Skill {
             }
             if( skillID == 3){
                 object.setSpriteImage( new Image( new FileInputStream(SKILL3_IMAGE)));
+            }
+            if( skillID == 4){
+                object.setSpriteImage( new Image( new FileInputStream(SKILL4_IMAGE)));
+            }
+            if( skillID == 5){
+                object.setSpriteImage( new Image( new FileInputStream(SKILL5_IMAGE)));
             }
         }
     }

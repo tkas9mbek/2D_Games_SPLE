@@ -81,7 +81,7 @@ public class EscapeMap extends AbstractMap {
                     yLoc = (yLoc + (int) (Math.random() * 85 + 90)) % 420;
                     gameObject = new Trap(x, yLoc, true);
                     gameObjects.add(gameObject);
-                } else if (choice < 17) {
+                } else if (choice < 16) {
                     locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
                     gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), 0);
                     gameObject.setVisible(false);

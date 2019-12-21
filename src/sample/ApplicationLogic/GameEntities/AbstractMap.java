@@ -14,7 +14,6 @@ abstract public class AbstractMap implements Runnable{
     public void clearGameObjects(){
         gameObjects.clear();
     }
-
     abstract public void setEnemies();
     abstract public void update();
     abstract public void createContent();

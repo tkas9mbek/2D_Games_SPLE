@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 
 public class Skeleton extends AbstractHero {
 
-    private int VELOCITY = 125;
+    private int VELOCITY = 140;
 
     private boolean dead;
     private boolean shielded;
@@ -78,20 +78,19 @@ public class Skeleton extends AbstractHero {
                 String lines[] = setting.split("\\r?\\n");
                 String pressedKey = InputManager.getPressedKey().toString();
                 if(pressedKey.equals(lines[0])) {
-                    setVelocity(0, -VELOCITY);
+                    setVelocity(-40, -VELOCITY);
                 }
                 else if(pressedKey.equals(lines[1])) {
-                    setVelocity(0, VELOCITY);
+                    setVelocity(-40, VELOCITY);
                 }
                 else if(pressedKey.equals(lines[2])) {
-                    setVelocity(-VELOCITY, 0);
+                    setVelocity(-VELOCITY - 40, 0);
                 }
                 else if(pressedKey.equals(lines[3])) {
-                    setVelocity(VELOCITY, 0);
+                    setVelocity(VELOCITY - 40, 0);
                 }
-            }
-            else{
-                setVelocity(-25,0);
+            } else {
+                setVelocity(- 40, 0);
             }
         }catch (Exception e){
             e.printStackTrace();

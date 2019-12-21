@@ -5,8 +5,10 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import sample.ApplicationLogic.GameManagement.EngineFactory;
 import sample.ApplicationLogic.GameManagement.EscapeEngine;
+import sample.ApplicationLogic.GameManagement.QuestEngine;
 import sample.ApplicationLogic.GameManagement.ShooterEngine;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 
 public class ScreenManager {
@@ -59,7 +61,7 @@ public class ScreenManager {
         ScreenManager.sm = sm;
     }
 
-    public Parent update(String text) {
+    public Parent update(String text) throws FileNotFoundException {
 
         EngineFactory engineFactory = new EngineFactory();
 
@@ -74,7 +76,9 @@ public class ScreenManager {
             root = ge.mapFactory.getEscapeMap().load();
         }
         else if(text.equals("Play Quest")){
-
+            QuestEngine ge = engineFactory.getQuestEngine();
+            ge.gameLoop();
+            root = ge.mapFactory.getQuestMap().load();
         }
         return root;
     }

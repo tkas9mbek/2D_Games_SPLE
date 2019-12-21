@@ -61,7 +61,6 @@ public class ShooterMap extends AbstractMap {
         ((GridPane)this.root).setPrefSize(852,480);
     }
 
-    @Override
     public void setEnemies(){
         try{
             gameObjects.clear();
@@ -197,7 +196,6 @@ public class ShooterMap extends AbstractMap {
                             mage.getBullets().get(k).update(elapsedTime);
                             mage.getBullets().get(k).draw(gc);
                         }
-                        System.out.println(mage.getAttackSpeed());
 
                         for(int i = 0;i < gameObjects.size(); i++){
                             gameObjects.get(i).update(elapsedTime);

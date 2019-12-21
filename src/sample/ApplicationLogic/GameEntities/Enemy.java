@@ -7,8 +7,6 @@ import java.io.FileNotFoundException;
 
 public class Enemy extends GameObject{
 
-    private final String DEATH_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\explosion.png";
-
     private int health;
     private int collisionDmg;
     private int experiencePrize;
@@ -48,8 +46,6 @@ public class Enemy extends GameObject{
     @Override
     public void disappearAnimation() throws FileNotFoundException {
         try{
-            Image death_image = new Image(new FileInputStream(DEATH_IMAGE));
-            setSpriteImage(death_image);
             setVelocity(0, 0);
         }catch (Exception e){
             e.printStackTrace();

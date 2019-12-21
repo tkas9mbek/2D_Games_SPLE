@@ -40,15 +40,15 @@ public class SmallEnemy extends Enemy {
                 setSpriteImage(new Image(new FileInputStream(GOBLIN)));
                 setHealth(20);
                 setCollisionDmg(20);
-                setExperiencePrize(30);
-                setScorePrize(30);
+                setExperiencePrize(45);
+                setScorePrize(45);
             } else {
                 setVelocity(-90, (int) ((Math.random() * -66) + 33));
                 setSpriteImage(new Image(new FileInputStream(ORC)));
                 setHealth(40);
                 setCollisionDmg(40);
-                setExperiencePrize(50);
-                setScorePrize(50);
+                setExperiencePrize(70);
+                setScorePrize(70);
             }
             setType("Small Enemy");
         }
