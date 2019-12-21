@@ -8,16 +8,11 @@ abstract public class AbstarctSkillBuilder {
     public Skill skills[];
 
     //Methods
-    public  void draw(GraphicsContext gc){
+    public void draw(GraphicsContext gc){
         for( Skill skill: skills){
             skill.draw( gc);
         }
     }
 
-    public Skill getSkill( int ID){
-        if( skills[ID - 1].isUnlocked() ){
-            return skills[ID - 1];
-        }
-        return null;
-    }
+    abstract public Skill getSkill( int ID);
 }

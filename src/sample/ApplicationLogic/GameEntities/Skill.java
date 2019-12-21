@@ -43,6 +43,23 @@ public class Skill {
         setOnEffect();
     }
 
+    public Skill(int ID) throws FileNotFoundException {
+        setSkillID( ID);
+        skillID = ID;
+        object = new GameObject(15 + 57 * ( (ID - 1) % 3), 428);
+        setCooldownTime(0);
+        if( skillID == 4){
+            object.setSpriteImage( new Image( new FileInputStream(SKILL4_IMAGE)));
+            maxCooldownTime = 10;
+            setEnergyCost(0);
+        }
+        if( skillID == 5){
+            object.setSpriteImage( new Image( new FileInputStream(SKILL5_IMAGE)));
+            maxCooldownTime = 28;
+            setEnergyCost(0);
+        }
+    }
+
     //Methods
     private void updateStats( int mageLvl) {
         this.mageLvl = mageLvl;
@@ -64,21 +81,7 @@ public class Skill {
         setUnlocked(mageLvl);
     }
 
-    private void updateStats() {
-        if( skillID == 4){
-            maxEffectTime = 0;
-            maxCooldownTime = 10;
-            setEnergyCost(0);
-        }
-        if( skillID == 5){
-            maxEffectTime = 0;
-            maxCooldownTime = 28;
-            setEnergyCost(0);
-        }
-    }
-
-
-        public void waterFireballs(Mage mage) throws FileNotFoundException {
+    public void waterFireballs(Mage mage) throws FileNotFoundException {
         useSkill();
         finalAttack = mage.getAttackDamage();
         mage.setAmountOfProjectile(mageLvl + 1);
@@ -102,12 +105,12 @@ public class Skill {
 
     public void multishot(Hunter hunter) throws FileNotFoundException {
         useSkill();
-        hunter.setMultishot(5);
+        hunter.setMultishot(2);
     }
 
     public void regeneration(Hunter hunter) throws FileNotFoundException {
         useSkill();
-        hunter.regenHealth(30);
+        hunter.regenHealth(35);
     }
 
     public void useSkill() throws FileNotFoundException {
@@ -195,15 +198,11 @@ public class Skill {
     }
 
     public void update( double time, Mage mage) throws FileNotFoundException {
-        if(mage != null) {
-            if (mage.getSubLevel() != mageLvl) {
-                updateStats(mage.getSubLevel());
-            }
-            if( isOnEffect()){
-                updateTimeEffect( time, mage);
-            }
-        } else{
-            updateStats(5);
+        if (mage.getSubLevel() != mageLvl) {
+            updateStats(mage.getSubLevel());
+        }
+        if( isOnEffect()){
+            updateTimeEffect( time, mage);
         }
 
         if( !isOnCooldown()){
@@ -214,23 +213,36 @@ public class Skill {
         }
     }
 
+    public void update( double time) throws FileNotFoundException {
+        if( !isOnCooldown()){
+            restoreImages();
+        }else{
+            cooldownTime -= time;
+            setOnCooldown();
+        }
+    }
+
     private void restoreImages() throws FileNotFoundException {
-        if( isUnlocked() ){
-            if( skillID == 1){
-                object.setSpriteImage( new Image( new FileInputStream(SKILL1_IMAGE)));
+        if( skillID == 1){
+            if( isUnlocked() ) {
+                object.setSpriteImage(new Image(new FileInputStream(SKILL1_IMAGE)));
             }
-            if( skillID == 2){
-                object.setSpriteImage( new Image( new FileInputStream(SKILL2_IMAGE)));
+        }
+        if( skillID == 2){
+            if( isUnlocked() ) {
+                object.setSpriteImage(new Image(new FileInputStream(SKILL2_IMAGE)));
             }
-            if( skillID == 3){
-                object.setSpriteImage( new Image( new FileInputStream(SKILL3_IMAGE)));
+        }
+        if( skillID == 3){
+            if( isUnlocked() ) {
+                object.setSpriteImage(new Image(new FileInputStream(SKILL3_IMAGE)));
             }
-            if( skillID == 4){
-                object.setSpriteImage( new Image( new FileInputStream(SKILL4_IMAGE)));
-            }
-            if( skillID == 5){
-                object.setSpriteImage( new Image( new FileInputStream(SKILL5_IMAGE)));
-            }
+        }
+        if( skillID == 4){
+            object.setSpriteImage( new Image( new FileInputStream(SKILL4_IMAGE)));
+        }
+        if( skillID == 5){
+            object.setSpriteImage( new Image( new FileInputStream(SKILL5_IMAGE)));
         }
     }
 

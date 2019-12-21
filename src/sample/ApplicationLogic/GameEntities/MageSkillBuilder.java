@@ -25,4 +25,11 @@ public class MageSkillBuilder extends AbstarctSkillBuilder{
             skill.update( time, sub);
         }
     }
+
+    public Skill getSkill( int ID){
+        if( skills[ID - 1].isUnlocked() ){
+            return skills[ID - 1];
+        }
+        return null;
+    }
 }
