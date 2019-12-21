@@ -76,7 +76,7 @@ public class BigEnemy extends Enemy{
         if( game.equals("Quest")) {
             setSpriteImage(new Image(new FileInputStream(LUMBERJACK)));
             setHealth(425);
-            setVelocity(0, -50);
+            setVelocity(0, -37);
             setAttackDamage(25);
             setAmountOfProjectile(1);
             setAttackSpeed(2.4);

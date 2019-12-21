@@ -126,7 +126,7 @@ public class QuestEngine extends AbstractEngine{
                     if(currentMapNo == 1) {
                         hero.setLocation( hero.getXPos() - 10, hero.getYPos());
                     }
-                    if(currentMapNo == 1) {
+                    if(currentMapNo == 2) {
                         hero.setLocation( hero.getXPos() + 10, hero.getYPos());
                     }
                 }

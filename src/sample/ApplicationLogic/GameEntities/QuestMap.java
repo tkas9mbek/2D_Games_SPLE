@@ -55,7 +55,7 @@ public class QuestMap extends AbstractMap {
             System.out.println( mapNo);
             if(mapNo == 1) {
                 // adding home
-                gameObject = new Neutral(630, 320, 2, "Return to home after completing quests");
+                gameObject = new Neutral(600, 312, 2, "Return to home after completing quests");
                 gameObjects.add(gameObject);
 
                 // adding shaman
