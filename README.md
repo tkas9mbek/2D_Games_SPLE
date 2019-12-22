@@ -2,7 +2,7 @@
 Software Product line of 2D games
 
 # Prerequisites
-Java 8 have to be installed in your computer
+Java 8 has to be installed in your computer
 
 # How to run program
 Dowload the source code, and run Main.java located in src/sample/UserInterface/Screen/
