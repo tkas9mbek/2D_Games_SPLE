@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Health.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Health.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Hunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Hunter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/QuestMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/QuestMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/images/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/images/home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Experience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Experience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Health.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Health.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/QuestMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/QuestMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ShooterMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ShooterMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images/home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images/hunter_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images/hunter_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images/hunter_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images/hunter_right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PowerUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PowerUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skeleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/QuestEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/QuestEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/configuration.txt" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -76,25 +68,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/QuestMap.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/QuestEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+            <state relative-caret-position="235">
+              <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
               <folding>
-                <element signature="e#9768#9769#0" expanded="true" />
-                <element signature="e#9800#9801#0" expanded="true" />
-                <element signature="e#9844#9845#0" expanded="true" />
-                <element signature="e#9873#9874#0" expanded="true" />
-                <element signature="e#9928#9929#0" expanded="true" />
-                <element signature="e#9964#9965#0" expanded="true" />
-                <element signature="e#10011#10012#0" expanded="true" />
-                <element signature="e#10043#10044#0" expanded="true" />
-                <element signature="e#10104#10105#0" expanded="true" />
-                <element signature="e#10146#10147#0" expanded="true" />
-                <element signature="e#10257#10258#0" expanded="true" />
-                <element signature="e#10285#10286#0" expanded="true" />
-                <element signature="e#10324#10325#0" expanded="true" />
-                <element signature="e#10358#10359#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,7 +83,59 @@
         <entry file="file://$PROJECT_DIR$/src/sample/configuration.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="7" selection-start-column="7" selection-end-column="7" />
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapeMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="90" column="93" lean-forward="true" selection-start-line="90" selection-start-column="93" selection-end-line="90" selection-end-column="93" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+              <folding>
+                <element signature="e#2038#2039#0" expanded="true" />
+                <element signature="e#2072#2073#0" expanded="true" />
+                <element signature="e#2395#2396#0" expanded="true" />
+                <element signature="e#2430#2431#0" expanded="true" />
+                <element signature="e#5876#5877#0" expanded="true" />
+                <element signature="e#5905#5906#0" expanded="true" />
+                <element signature="e#5949#5950#0" expanded="true" />
+                <element signature="e#5979#5980#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PowerUp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skeleton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,6 +145,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
               <caret line="79" selection-start-line="79" selection-end-line="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -131,25 +171,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-              <folding>
-                <element signature="e#2038#2039#0" expanded="true" />
-                <element signature="e#2072#2073#0" expanded="true" />
-                <element signature="e#2395#2396#0" expanded="true" />
-                <element signature="e#2430#2431#0" expanded="true" />
-                <element signature="e#5876#5877#0" expanded="true" />
-                <element signature="e#5905#5906#0" expanded="true" />
-                <element signature="e#5949#5950#0" expanded="true" />
-                <element signature="e#5979#5980#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Health.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1003">
@@ -158,46 +179,6 @@
                 <element signature="e#2301#2302#0" expanded="true" />
                 <element signature="e#2332#2333#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/HunterSkillBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#576#577#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/MageSkillBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstarctSkillBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -237,12 +218,12 @@
       <find>currentMapNo</find>
       <find>s</find>
       <find>questMap.heroFactory.getHunter()</find>
-      <find>gold bag</find>
       <find>skills</find>
       <find>setOnCooldown</find>
       <find>updateStats</find>
       <find>maxCooldownTime</find>
       <find>useSkill</find>
+      <find>gold bag</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -285,9 +266,7 @@
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Trap.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/SmallEnemy.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/EngineFactory.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skeleton.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Mage.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PowerUp.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Bullet.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Obstacle.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Enemy.java" />
@@ -298,14 +277,16 @@
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstarctSkillBuilder.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skill.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/HunterSkillBuilder.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/QuestEngine.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/QuestMap.java" />
-        <option value="$PROJECT_DIR$/src/sample/configuration.txt" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ShooterMap.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Experience.java" />
         <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Health.java" />
+        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PowerUp.java" />
+        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skeleton.java" />
+        <option value="$PROJECT_DIR$/src/sample/configuration.txt" />
+        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/QuestEngine.java" />
+        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java" />
+        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java" />
       </list>
     </option>
   </component>
@@ -574,12 +555,12 @@
       <workItem from="1576762788161" duration="1010000" />
       <workItem from="1576930080222" duration="12852000" />
       <workItem from="1577000127156" duration="1514000" />
-      <workItem from="1577007090996" duration="1539000" />
+      <workItem from="1577007090996" duration="3641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87732000" />
+    <option name="totallyTimeSpent" value="89834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -594,7 +575,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3268921" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16103059" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.048309177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -604,7 +585,7 @@
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32850242" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32824427" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
@@ -825,16 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="85" column="44" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Mage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -845,27 +816,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skeleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/SmallEnemy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PowerUp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -975,16 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/QuestEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/CollisionManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1004,23 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <element signature="e#2038#2039#0" expanded="true" />
-            <element signature="e#2072#2073#0" expanded="true" />
-            <element signature="e#2395#2396#0" expanded="true" />
-            <element signature="e#2430#2431#0" expanded="true" />
-            <element signature="e#5876#5877#0" expanded="true" />
-            <element signature="e#5905#5906#0" expanded="true" />
-            <element signature="e#5949#5950#0" expanded="true" />
-            <element signature="e#5979#5980#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/HunterSkillBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1036,13 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1076,13 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/configuration.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ShooterMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -1108,6 +1021,74 @@
             <element signature="e#2301#2302#0" expanded="true" />
             <element signature="e#2332#2333#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapeMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="90" column="93" lean-forward="true" selection-start-line="90" selection-start-column="93" selection-end-line="90" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PowerUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/QuestEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="143" column="48" selection-start-line="143" selection-start-column="48" selection-end-line="143" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skeleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding>
+            <element signature="e#2038#2039#0" expanded="true" />
+            <element signature="e#2072#2073#0" expanded="true" />
+            <element signature="e#2395#2396#0" expanded="true" />
+            <element signature="e#2430#2431#0" expanded="true" />
+            <element signature="e#5876#5877#0" expanded="true" />
+            <element signature="e#5905#5906#0" expanded="true" />
+            <element signature="e#5949#5950#0" expanded="true" />
+            <element signature="e#5979#5980#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/configuration.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
         </state>
       </provider>
     </entry>

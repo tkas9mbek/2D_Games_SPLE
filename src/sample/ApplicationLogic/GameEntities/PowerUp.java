@@ -40,6 +40,7 @@ public class PowerUp extends GameObject {
             } else {
                 setVelocity(-100, 0);
                 setSpriteImage(new Image(new FileInputStream(TOXIC)));
+                System.out.println("create toxic");
             }
         }
 

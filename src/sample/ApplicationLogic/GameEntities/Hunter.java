@@ -38,7 +38,7 @@ public class Hunter extends AbstractHero {
     }
 
     public void updateStats() throws FileNotFoundException {
-        health = new Health( 2);
+        health = new Health( 1);
         setAttackSpeed(1.2);
         setAttackDamage(25);
     }

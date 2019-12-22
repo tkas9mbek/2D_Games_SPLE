@@ -96,7 +96,7 @@ public class QuestEngine extends AbstractEngine{
                 if (enemy.toString().equals("Big Enemy") ) {
                     ArrayList<Bullet> bullets;
                     if(  enemy.getHealth() <= 0 ) {
-                        GameObject gold = new Item(enemy.getXPos(), enemy.getYPos(), 1, "Gold bag");
+                        GameObject gold = new Item(enemy.getXPos(), enemy.getYPos(), 1, "Bag of gold");
                         map.removeObject(enemy);
                         quests.remove(0);
                         quests.add("Pick up a bag of gold");
@@ -139,9 +139,9 @@ public class QuestEngine extends AbstractEngine{
             try {
                 flag = cm.checkGameObjectCollision(item,hero);
                 if(flag) {
-                    map.addToInventory("Gold bag");
+                    map.addToInventory("Bag of gold");
                     quests.remove(0);
-                    quests.add("Take gold bag to home");
+                    quests.add("Take bag of gold to home");
                     questMap.setQuests(quests);
                     map.removeObject(item);
                 }

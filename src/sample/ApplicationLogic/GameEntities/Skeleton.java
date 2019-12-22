@@ -26,7 +26,7 @@ public class Skeleton extends AbstractHero {
     private String avatar2 = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\warlock_shielded.png";
 
     Skeleton() throws FileNotFoundException {
-        super(200, 200);
+        super(350, 200);
         setDead(false);
         setSpriteImage( new Image(new FileInputStream(avatar)));
     }
