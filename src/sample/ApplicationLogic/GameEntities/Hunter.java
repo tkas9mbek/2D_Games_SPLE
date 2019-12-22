@@ -30,7 +30,7 @@ public class Hunter extends AbstractHero {
     private int multishot = 0;
 
     Hunter() throws FileNotFoundException {
-        super(580, 340);
+        super(610, 340);
         setSpriteImage( new Image(new FileInputStream(avatar_left)));
         updateStats();
         bullets = new ArrayList<>();

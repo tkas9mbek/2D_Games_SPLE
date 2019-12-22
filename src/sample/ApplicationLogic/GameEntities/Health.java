@@ -64,7 +64,12 @@ public class Health {
 
     public void update( int increaseAmount) throws FileNotFoundException {
         setHealthAmount( getHealthAmount() + increaseAmount);
-        object.setSpriteImage( IMAGES[ (healthAmount + 1 ) / (maxHealth / (imageSize - 1) )]);
+        int index = (int) ( ( (double) healthAmount / (double) maxHealth) * (imageSize - 1) );
+
+        if(healthAmount != 0 && index == 0 ) {
+            index = 1;
+        }
+        object.setSpriteImage( IMAGES[ index]);
     }
 
     public void draw(GraphicsContext gc)

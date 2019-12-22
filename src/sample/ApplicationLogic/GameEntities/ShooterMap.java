@@ -96,14 +96,14 @@ public class ShooterMap extends AbstractMap {
                     else{
 
                         if(i % 4 == 0) {
-                            locationManager.generateLocation(1000, 3300, 100, 300);
+                            locationManager.generateLocation(1000, 3750, 100, 300);
                             double x = locationManager.getX();
                             double y = locationManager.getY();
                             gameObject = new BigEnemy(x, y, mapLevel);
                             gameObject.setVisible(false);
                             gameObjects.add(gameObject);
                         } else {
-                            locationManager.generateLocation(1100, 3500, 50, 370);
+                            locationManager.generateLocation(1100, 3750, 50, 370);
                             double x = locationManager.getX();
                             double y = locationManager.getY();
                             gameObject = new SmallEnemy(x, y, false);
@@ -112,7 +112,7 @@ public class ShooterMap extends AbstractMap {
 
                         if(i % 10 == 0) {
                             GameObject powerUp1;
-                            locationManager.generateLocation(1200, 2800, 100, 400);
+                            locationManager.generateLocation(1000, 3600, 100, 400);
                             powerUp1 = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), mapLevel);
                             powerUp1.setVisible(false);
                             gameObjects.add(powerUp1);

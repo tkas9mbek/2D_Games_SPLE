@@ -75,12 +75,17 @@ public class Experience {
     public void update( int increaseAmount, Mage sub) throws FileNotFoundException {
         subLevel = sub.getSubLevel();
         setCurExperience( curExperience + increaseAmount);
-        expBar.setSpriteImage( EXPBAR[ (curExperience + 1 ) / (maxExperience / (imageSize - 1) )]);
+        int index = (int) ( ( (double) curExperience / (double) maxExperience) * (imageSize - 1) );
+
+        if(curExperience == maxExperience ) {
+            index = 0;
+        }
+        expBar.setSpriteImage( EXPBAR[ index ]);
+
         if( curExperience >= maxExperience && subLevel != maxLvl){
             sub.setSubLevel( subLevel + 1);
             sub.updateStats();
             updateStats( subLevel + 1);
-            //lvlBar.setSpriteImage(LEVEL[subLevel + 1]);
         }
     }
 
