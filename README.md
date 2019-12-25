@@ -12,5 +12,5 @@ In configuration file located in src/sample/, type: <br>
 "Shooter" for shooter game<br>
 "Escape" for escape game<br>
 "Quest" for quest game<br>
-In addition, you can write in configuration file names of the features that u want to disable:
+In addition, you can write in configuration file names of the features that you want to disable:
 "Obstacles", "Trap", "Neutrals", "Power up", "Big Enemy", "Small Enemy", "Boss"
