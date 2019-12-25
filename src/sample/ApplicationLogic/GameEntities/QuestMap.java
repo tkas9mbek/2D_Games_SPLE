@@ -8,6 +8,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class QuestMap extends AbstractMap {
@@ -24,7 +25,8 @@ public class QuestMap extends AbstractMap {
     public void run(){
     }
 
-    public QuestMap(ArrayList<String> quests, ArrayList<String> inventory, int mapNo){
+    public QuestMap(ArrayList<String> quests, ArrayList<String> inventory, int mapNo) throws FileNotFoundException {
+        super();
         root = new GridPane();
         gameObjects = new ArrayList<>();
         setBackgroundImage(SECOND_LEVEL_BACKGROUND_IMAGE);
@@ -59,30 +61,36 @@ public class QuestMap extends AbstractMap {
                 gameObjects.add(gameObject);
 
                 // adding shaman
-                gameObject = new Neutral(250, 175, 1, "Last time a lumberjack was seen in the west");
-                gameObjects.add(gameObject);
+                if( !featureExclude.contains("Neutrals")) {
+                    gameObject = new Neutral(250, 175, 1, "Last time a lumberjack was seen in the west");
+                    gameObjects.add(gameObject);
+                }
 
                 // adding trees
-                gameObject = new Obstacle(770, 0, true, 0);
-                gameObjects.add(gameObject);
-                gameObject = new Obstacle(770, 130, true, 0);
-                gameObjects.add(gameObject);
-                gameObject = new Obstacle(770, 260, true, 0);
-                gameObjects.add(gameObject);
-                gameObject = new Obstacle(770, 360, true, 0);
-                gameObjects.add(gameObject);
+                if( !featureExclude.contains("Obstacles")) {
+                    gameObject = new Obstacle(770, 0, true, 0);
+                    gameObjects.add(gameObject);
+                    gameObject = new Obstacle(770, 130, true, 0);
+                    gameObjects.add(gameObject);
+                    gameObject = new Obstacle(770, 260, true, 0);
+                    gameObjects.add(gameObject);
+                    gameObject = new Obstacle(770, 360, true, 0);
+                    gameObjects.add(gameObject);
+                }
             } else if(mapNo == 2) {
                 gameObject = new BigEnemy(140, 50, 0);
                 gameObjects.add(gameObject);
 
-                gameObject = new Obstacle(0, 0, true, 0);
-                gameObjects.add(gameObject);
-                gameObject = new Obstacle(0, 110, true, 0);
-                gameObjects.add(gameObject);
-                gameObject = new Obstacle(0, 215, true, 0);
-                gameObjects.add(gameObject);
-                gameObject = new Obstacle(0, 310, true, 0);
-                gameObjects.add(gameObject);
+                if( !featureExclude.contains("Obstacles")) {
+                    gameObject = new Obstacle(0, 0, true, 0);
+                    gameObjects.add(gameObject);
+                    gameObject = new Obstacle(0, 110, true, 0);
+                    gameObjects.add(gameObject);
+                    gameObject = new Obstacle(0, 215, true, 0);
+                    gameObjects.add(gameObject);
+                    gameObject = new Obstacle(0, 310, true, 0);
+                    gameObjects.add(gameObject);
+                }
             }
             System.out.println(gameObjects);
         }catch (Exception e){

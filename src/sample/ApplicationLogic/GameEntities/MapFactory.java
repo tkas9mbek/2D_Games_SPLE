@@ -8,14 +8,14 @@ public class MapFactory {
     private ShooterMap shooterMap;
     private QuestMap questMap;
 
-    public EscapeMap getEscapeMap() {
+    public EscapeMap getEscapeMap() throws FileNotFoundException {
         if (null == escapeMap) {
             escapeMap = new EscapeMap();
         }
         return escapeMap;
     }
 
-    public ShooterMap getShooterMap() {
+    public ShooterMap getShooterMap() throws FileNotFoundException {
         if (null == shooterMap) {
             shooterMap = new ShooterMap();
         }

@@ -7,14 +7,14 @@ public class EngineFactory {
     private EscapeEngine escapeEngine;
     private QuestEngine questEngine;
 
-    public ShooterEngine getShooterEngine() {
+    public ShooterEngine getShooterEngine() throws FileNotFoundException {
         if (null == shooterEngine) {
             shooterEngine = new ShooterEngine();
         }
         return shooterEngine;
     }
 
-    public EscapeEngine getEscapeEngine() {
+    public EscapeEngine getEscapeEngine() throws FileNotFoundException {
         if (null == escapeEngine) {
             escapeEngine = new EscapeEngine();
         }

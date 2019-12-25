@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import sample.UserInterface.Screen.GameEndPane;
 import sample.UserInterface.Screen.Main;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class ShooterMap extends AbstractMap {
@@ -32,7 +33,8 @@ public class ShooterMap extends AbstractMap {
         this.score += score;
     }
 
-    public ShooterMap(){
+    public ShooterMap() throws FileNotFoundException {
+        super();
         mapLevel = 1;
         root = new GridPane();
         gameObjects = new ArrayList<>();
@@ -79,43 +81,52 @@ public class ShooterMap extends AbstractMap {
                 GameObject gameObject;
 
                 if(i == loopnumber - 1){
-                    locationManager.generateLocation(4000, 4200, 150, 200);
-                    double x = locationManager.getX();
-                    double y = locationManager.getY();
-                    gameObject = new Boss(x, y, mapLevel);
-                    gameObjects.add(gameObject);
-
-                } else {
-                    if(i < 5){
-                        locationManager.generateLocation(750, 1100, 50, 370);
+                    if( !featureExclude.contains("Boss")) {
+                        locationManager.generateLocation(4000, 4200, 150, 200);
                         double x = locationManager.getX();
                         double y = locationManager.getY();
-                        gameObject = new SmallEnemy(x, y, true);
+                        gameObject = new Boss(x, y, mapLevel);
                         gameObjects.add(gameObject);
+                    }
+                } else {
+                    if(i < 5){
+                        if( !featureExclude.contains("Small Enemy")) {
+                            locationManager.generateLocation(750, 1100, 50, 370);
+                            double x = locationManager.getX();
+                            double y = locationManager.getY();
+                            gameObject = new SmallEnemy(x, y, true);
+                            gameObjects.add(gameObject);
+                        }
                     }
                     else{
 
                         if(i % 4 == 0) {
-                            locationManager.generateLocation(1000, 3750, 100, 300);
-                            double x = locationManager.getX();
-                            double y = locationManager.getY();
-                            gameObject = new BigEnemy(x, y, mapLevel);
-                            gameObject.setVisible(false);
-                            gameObjects.add(gameObject);
+                            if( !featureExclude.contains("Big Enemy")) {
+                                locationManager.generateLocation(1000, 3750, 100, 300);
+                                double x = locationManager.getX();
+                                double y = locationManager.getY();
+                                gameObject = new BigEnemy(x, y, mapLevel);
+                                gameObject.setVisible(false);
+                                gameObjects.add(gameObject);
+                            }
                         } else {
-                            locationManager.generateLocation(1100, 3750, 50, 370);
-                            double x = locationManager.getX();
-                            double y = locationManager.getY();
-                            gameObject = new SmallEnemy(x, y, false);
-                            gameObjects.add(gameObject);
+                            if( !featureExclude.contains("Small Enemy")) {
+                                locationManager.generateLocation(1100, 3750, 50, 370);
+                                double x = locationManager.getX();
+                                double y = locationManager.getY();
+                                gameObject = new SmallEnemy(x, y, false);
+                                gameObjects.add(gameObject);
+                            }
                         }
 
                         if(i % 10 == 0) {
-                            GameObject powerUp1;
-                            locationManager.generateLocation(1000, 3600, 100, 400);
-                            powerUp1 = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), mapLevel);
-                            powerUp1.setVisible(false);
-                            gameObjects.add(powerUp1);
+                            if( !featureExclude.contains("Power up")) {
+                                GameObject powerUp1;
+                                locationManager.generateLocation(1000, 3600, 100, 400);
+                                powerUp1 = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), mapLevel);
+                                powerUp1.setVisible(false);
+                                gameObjects.add(powerUp1);
+                            }
                         }
                     }
 

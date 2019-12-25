@@ -2,9 +2,16 @@ package sample.ApplicationLogic.GameEntities;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.Parent;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 abstract public class AbstractMap implements Runnable{
+
+    private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
+
     public Parent root;
     public Parent pauseRoot;
     public ArrayList<GameObject> gameObjects;
@@ -18,6 +25,19 @@ abstract public class AbstractMap implements Runnable{
     abstract public void update();
     abstract public void createContent();
 
+
+    public ArrayList<String> featureExclude;
+
+    public AbstractMap() throws FileNotFoundException {
+        File file = new File(CONFIGURATION_FILE);
+        Scanner sc = new Scanner(file);
+
+        featureExclude = new ArrayList<>();
+
+        while (sc.hasNextLine()) {
+            featureExclude.add( sc.nextLine() );
+        }
+    }
     public void setRoot(Parent root) {
         this.root = root;
     }

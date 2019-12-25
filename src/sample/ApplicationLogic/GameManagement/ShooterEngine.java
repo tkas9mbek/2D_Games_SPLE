@@ -12,7 +12,7 @@ public class ShooterEngine extends AbstractEngine{
 
     private ShooterMap gameShooterMap;
 
-    public ShooterEngine(){
+    public ShooterEngine() throws FileNotFoundException {
         isGamePaused = false;
         gameShooterMap = mapFactory.getShooterMap();
         cm = CollisionManager.getInstance();

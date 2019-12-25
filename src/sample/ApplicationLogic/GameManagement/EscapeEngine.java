@@ -12,7 +12,7 @@ public class EscapeEngine extends AbstractEngine{
 
     private EscapeMap gameEscapeMap;
 
-    public EscapeEngine(){
+    public EscapeEngine() throws FileNotFoundException {
         isGamePaused = false;
         gameEscapeMap = mapFactory.getEscapeMap();
         cm = CollisionManager.getInstance();

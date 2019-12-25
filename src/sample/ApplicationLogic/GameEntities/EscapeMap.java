@@ -8,6 +8,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class EscapeMap extends AbstractMap {
@@ -26,7 +27,8 @@ public class EscapeMap extends AbstractMap {
     public void run(){
     }
 
-    public EscapeMap(){
+    public EscapeMap() throws FileNotFoundException {
+        super();
         root = new GridPane();
         gameObjects = new ArrayList<>();
         locationManager = new ObjectRandomLocationManager();
@@ -55,42 +57,55 @@ public class EscapeMap extends AbstractMap {
             double yLoc = 25;
             double x;
 
-            for(int i = 5; i < 400; i = i + 120) {
-                gameObject = new SmallEnemy(5, i, true);
-                gameObjects.add(gameObject);
+            if( !featureExclude.contains("Small Enemy")) {
+                for (int i = 5; i < 400; i = i + 120) {
+                    gameObject = new SmallEnemy(5, i, true);
+                    gameObjects.add(gameObject);
+                }
             }
+
             for(int i = 800; i < 50000;) {
 
                 int choice = (int) (Math.random() * 18);
                 if (choice < 7) {
-                    locationManager.generateLocation(i = i + 100, i + 25, 30, 400);
-                    x = locationManager.getX();
-                    yLoc = (yLoc + (int) (Math.random() * 120 + 120)) % 440;
-                    gameObject = new Obstacle(x, yLoc, true, 2);
-                    gameObjects.add(gameObject);
+                    if( !featureExclude.contains("Obstacles")) {
+                        locationManager.generateLocation(i = i + 100, i + 25, 30, 400);
+                        x = locationManager.getX();
+                        yLoc = (yLoc + (int) (Math.random() * 120 + 120)) % 440;
+                        gameObject = new Obstacle(x, yLoc, true, 2);
+                        gameObjects.add(gameObject);
+                    }
                 } else if (choice < 8) {
-                    locationManager.generateLocation(i = i + 150, i + 25, 30, 400);
-                    x = locationManager.getX();
-                    yLoc = yLoc > 200 ? 3 : 337;
-                    gameObject = new Obstacle(x, yLoc, true, 1);
-                    gameObjects.add(gameObject);
-                    yLoc = (yLoc + (int) (Math.random() * 140 + 140)) % 440;
+                    if( !featureExclude.contains("Obstacles")) {
+                        locationManager.generateLocation(i = i + 150, i + 25, 30, 400);
+                        x = locationManager.getX();
+                        yLoc = yLoc > 200 ? 3 : 337;
+                        gameObject = new Obstacle(x, yLoc, true, 1);
+                        gameObjects.add(gameObject);
+                        yLoc = (yLoc + (int) (Math.random() * 140 + 140)) % 440;
+                    }
                 } else if (choice < 14) {
-                    locationManager.generateLocation(i = i + 150, i + 25, 30, 400);
-                    x = locationManager.getX();
-                    yLoc = (yLoc + (int) (Math.random() * 85 + 90)) % 420;
-                    gameObject = new Trap(x, yLoc, true);
-                    gameObjects.add(gameObject);
+                    if( !featureExclude.contains("Trap")) {
+                        locationManager.generateLocation(i = i + 150, i + 25, 30, 400);
+                        x = locationManager.getX();
+                        yLoc = (yLoc + (int) (Math.random() * 85 + 90)) % 420;
+                        gameObject = new Trap(x, yLoc, true);
+                        gameObjects.add(gameObject);
+                    }
                 } else if (choice < 16) {
-                    locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
-                    gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), 0);
-                    gameObject.setVisible(false);
-                    gameObjects.add(gameObject);
+                    if( !featureExclude.contains("Power up")) {
+                        locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
+                        gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), 0);
+                        gameObject.setVisible(false);
+                        gameObjects.add(gameObject);
+                    }
                 } else {
-                    locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
-                    gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), 3, 0);
-                    gameObject.setVisible(false);
-                    gameObjects.add(gameObject);
+                    if( !featureExclude.contains("Trap")) {
+                        locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
+                        gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), 3, 0);
+                        gameObject.setVisible(false);
+                        gameObjects.add(gameObject);
+                    }
                 }
             }
         }catch (Exception e){
