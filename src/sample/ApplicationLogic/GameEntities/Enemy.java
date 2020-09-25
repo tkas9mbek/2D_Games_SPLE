@@ -1,8 +1,6 @@
 package sample.ApplicationLogic.GameEntities;
 
 import javafx.scene.image.Image;
-
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class Enemy extends GameObject{

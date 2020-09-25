@@ -2,11 +2,8 @@ package sample.ApplicationLogic.GameEntities;
 
 import javafx.scene.image.Image;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Neutral extends GameObject {
 

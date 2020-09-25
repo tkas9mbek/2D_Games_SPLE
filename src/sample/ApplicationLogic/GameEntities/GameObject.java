@@ -3,7 +3,6 @@ package sample.ApplicationLogic.GameEntities;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.shape.Rectangle;
-
 import java.io.FileNotFoundException;
 
 
@@ -107,7 +106,7 @@ public class GameObject {
     }
 
     public void update(double time) throws FileNotFoundException {
-        if( xPos <= 850 - getWidth() / 2 && !isVisible() )
+        if( xPos <= 850 - getWidth() / 4 && !isVisible() )
             setVisible();
         if(isVisible()) {
             xPos += time * xVelocity;

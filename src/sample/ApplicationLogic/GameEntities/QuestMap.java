@@ -54,45 +54,36 @@ public class QuestMap extends AbstractMap {
             gameObjects.clear();
             GameObject gameObject;
 
-            System.out.println( mapNo);
             if(mapNo == 1) {
                 // adding home
                 gameObject = new Neutral(570, 295, 2, "Return to home after completing quests");
                 gameObjects.add(gameObject);
 
                 // adding shaman
-                if( !featureExclude.contains("Neutrals")) {
-                    gameObject = new Neutral(250, 175, 1, "Last time a lumberjack was seen in the west");
-                    gameObjects.add(gameObject);
-                }
+                gameObject = new Neutral(250, 175, 1, "Last time a lumberjack was seen in the west");
+                gameObjects.add(gameObject);
 
                 // adding trees
-                if( !featureExclude.contains("Obstacles")) {
-                    gameObject = new Obstacle(770, 0, true, 0);
-                    gameObjects.add(gameObject);
-                    gameObject = new Obstacle(770, 130, true, 0);
-                    gameObjects.add(gameObject);
-                    gameObject = new Obstacle(770, 260, true, 0);
-                    gameObjects.add(gameObject);
-                    gameObject = new Obstacle(770, 360, true, 0);
-                    gameObjects.add(gameObject);
-                }
+                gameObject = new Obstacle(770, 0, true, 0);
+                gameObjects.add(gameObject);
+                gameObject = new Obstacle(770, 130, true, 0);
+                gameObjects.add(gameObject);
+                gameObject = new Obstacle(770, 260, true, 0);
+                gameObjects.add(gameObject);
+                gameObject = new Obstacle(770, 360, true, 0);
+                gameObjects.add(gameObject);
             } else if(mapNo == 2) {
                 gameObject = new BigEnemy(140, 50, 0);
                 gameObjects.add(gameObject);
-
-                if( !featureExclude.contains("Obstacles")) {
-                    gameObject = new Obstacle(0, 0, true, 0);
-                    gameObjects.add(gameObject);
-                    gameObject = new Obstacle(0, 110, true, 0);
-                    gameObjects.add(gameObject);
-                    gameObject = new Obstacle(0, 215, true, 0);
-                    gameObjects.add(gameObject);
-                    gameObject = new Obstacle(0, 310, true, 0);
-                    gameObjects.add(gameObject);
-                }
+                gameObject = new Obstacle(0, 0, true, 0);
+                gameObjects.add(gameObject);
+                gameObject = new Obstacle(0, 110, true, 0);
+                gameObjects.add(gameObject);
+                gameObject = new Obstacle(0, 215, true, 0);
+                gameObjects.add(gameObject);
+                gameObject = new Obstacle(0, 310, true, 0);
+                gameObjects.add(gameObject);
             }
-            System.out.println(gameObjects);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -135,8 +126,7 @@ public class QuestMap extends AbstractMap {
                         }
 
                         head.setText(text);
-                        head.setFill(Color.WHITE);
-                        head.setStyle("-fx-font: 22 arial;");
+                        head.setId("score-text");
 
                         double elapsedTime = (currentNanoTime - lastNanoTime) / 1000000000.0;
                         lastNanoTime = currentNanoTime;
@@ -192,9 +182,9 @@ public class QuestMap extends AbstractMap {
 
     public GameObject getGameObject(double x, double y){
         GameObject returnval = null;
-        for(int i = 0; i < gameObjects.size(); i++){
-            if(gameObjects.get(i).getXPos() == x && gameObjects.get(i).getYPos() == y){
-                returnval = gameObjects.get(i);
+        for (GameObject gameObject : gameObjects) {
+            if (gameObject.getXPos() == x && gameObject.getYPos() == y) {
+                returnval = gameObject;
             }
         }
         return returnval;
@@ -203,11 +193,11 @@ public class QuestMap extends AbstractMap {
     public ArrayList<Obstacle> getVisibleObstacles(){
         ArrayList <Obstacle> obstacles = new ArrayList<>();
         int count = gameObjects.size();
-        for(int i = 0; i < count; i++){
-            if(gameObjects.get(i) != null)
-                if(gameObjects.get(i).isVisible())
-                    if(gameObjects.get(i).toString().equals("Obstacle"))
-                        obstacles.add((Obstacle)gameObjects.get(i));
+        for (GameObject gameObject : gameObjects) {
+            if (gameObject != null)
+                if (gameObject.isVisible())
+                    if (gameObject.toString().equals("Obstacle"))
+                        obstacles.add((Obstacle) gameObject);
         }
         return obstacles;
     }
@@ -215,11 +205,11 @@ public class QuestMap extends AbstractMap {
     public ArrayList<Neutral> getVisibleNeutrals(){
         ArrayList <Neutral> obstacles = new ArrayList<>();
         int count = gameObjects.size();
-        for(int i = 0; i < count; i++){
-            if(gameObjects.get(i) != null)
-                if(gameObjects.get(i).isVisible())
-                    if(gameObjects.get(i).toString().equals("Neutral"))
-                        obstacles.add((Neutral)gameObjects.get(i));
+        for (GameObject gameObject : gameObjects) {
+            if (gameObject != null)
+                if (gameObject.isVisible())
+                    if (gameObject.toString().equals("Neutral"))
+                        obstacles.add((Neutral) gameObject);
         }
         return obstacles;
     }
@@ -227,11 +217,11 @@ public class QuestMap extends AbstractMap {
     public ArrayList<Neutral> getVisibleHome(){
         ArrayList <Neutral> home = new ArrayList<>();
         int count = gameObjects.size();
-        for(int i = 0; i < count; i++){
-            if(gameObjects.get(i) != null)
-                if(gameObjects.get(i).isVisible())
-                    if(gameObjects.get(i).toString().equals("Home"))
-                        home.add((Neutral)gameObjects.get(i));
+        for (GameObject gameObject : gameObjects) {
+            if (gameObject != null)
+                if (gameObject.isVisible())
+                    if (gameObject.toString().equals("Home"))
+                        home.add((Neutral) gameObject);
         }
         return home;
     }
@@ -239,11 +229,11 @@ public class QuestMap extends AbstractMap {
     public ArrayList<Item> getVisibleItems(){
         ArrayList <Item> items = new ArrayList<>();
         int count = gameObjects.size();
-        for(int i = 0; i < count; i++){
-            if(gameObjects.get(i) != null)
-                if(gameObjects.get(i).isVisible())
-                    if(gameObjects.get(i).toString().equals("Item"))
-                        items.add((Item)gameObjects.get(i));
+        for (GameObject gameObject : gameObjects) {
+            if (gameObject != null)
+                if (gameObject.isVisible())
+                    if (gameObject.toString().equals("Item"))
+                        items.add((Item) gameObject);
         }
         return items;
     }
@@ -251,11 +241,11 @@ public class QuestMap extends AbstractMap {
     public ArrayList<Enemy> getVisibleEnemies(){
         ArrayList <Enemy> enemies = new ArrayList<>();
         int count = gameObjects.size();
-        for(int i = 0; i < count; i++){
-            if(gameObjects.get(i) != null)
-                if(gameObjects.get(i).isVisible())
-                    if(gameObjects.get(i).toString().equals("Big Enemy"))
-                        enemies.add((Enemy)gameObjects.get(i));
+        for (GameObject gameObject : gameObjects) {
+            if (gameObject != null)
+                if (gameObject.isVisible())
+                    if (gameObject.toString().equals("Big Enemy"))
+                        enemies.add((Enemy) gameObject);
         }
         return enemies;
     }

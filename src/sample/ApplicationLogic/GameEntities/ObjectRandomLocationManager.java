@@ -2,10 +2,6 @@ package sample.ApplicationLogic.GameEntities;
 
 import java.util.Random;
 
-import javax.tools.JavaFileManager.Location;
-
-//cannot find the import for Location object
-
 public class ObjectRandomLocationManager {
 
     //Attributes

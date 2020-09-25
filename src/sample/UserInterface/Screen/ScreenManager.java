@@ -7,13 +7,11 @@ import sample.ApplicationLogic.GameManagement.EngineFactory;
 import sample.ApplicationLogic.GameManagement.EscapeEngine;
 import sample.ApplicationLogic.GameManagement.QuestEngine;
 import sample.ApplicationLogic.GameManagement.ShooterEngine;
-
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.net.URL;
 
 public class ScreenManager {
     private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
-
     private int width;
     private final URL DIR_LOC = getClass().getResource(".");
     private int height;
@@ -26,11 +24,11 @@ public class ScreenManager {
         BackgroundImage myBI= new BackgroundImage(new Image(DIR_LOC +  "\\images\\back.png",852,480,false,true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
-        this.root = new GridPane();
+        ScreenManager.root = new GridPane();
 
-        ((GridPane)this.root).setBackground(new Background(myBI));
-        ((GridPane)this.root).setPrefSize(852,480);
-        this.root.getStylesheets().add("sample/UserInterface/Screen/style.css");
+        ((GridPane) ScreenManager.root).setBackground(new Background(myBI));
+        ((GridPane) ScreenManager.root).setPrefSize(852,480);
+        ScreenManager.root.getStylesheets().add("sample/UserInterface/Screen/style.css");
     }
     public int getHeight() {
         return height;
@@ -45,7 +43,7 @@ public class ScreenManager {
     }
 
     public void setRoot(Parent root) {
-        this.root = root;
+        ScreenManager.root = root;
     }
 
     public int getWidth() {
@@ -61,25 +59,39 @@ public class ScreenManager {
         ScreenManager.sm = sm;
     }
 
-    public Parent update(String text) throws FileNotFoundException {
+    public Parent update(String text) throws IOException {
 
         EngineFactory engineFactory = new EngineFactory();
 
-        if(text.equals("Play Shooter")){
-            ShooterEngine ge = engineFactory.getShooterEngine();
-            ge.gameLoop();
-            root = ge.mapFactory.getShooterMap().load();
+        File file = new File(CONFIGURATION_FILE);
+
+        // creates the file
+        FileWriter writer = new FileWriter(file);
+        writer.write(text.substring(5));
+        writer.flush();
+        writer.close();
+
+        switch (text) {
+            case "Play Shooter": {
+                ShooterEngine ge = engineFactory.getShooterEngine();
+                ge.gameLoop();
+                root = ge.mapFactory.getShooterMap().load();
+                break;
+            }
+            case "Play Escape": {
+                EscapeEngine ge = engineFactory.getEscapeEngine();
+                ge.gameLoop();
+                root = ge.mapFactory.getEscapeMap().load();
+                break;
+            }
+            case "Play Quest": {
+                QuestEngine ge = engineFactory.getQuestEngine();
+                ge.gameLoop();
+                root = ge.mapFactory.getQuestMap().load();
+                break;
+            }
         }
-        else if(text.equals("Play Escape")){
-            EscapeEngine ge = engineFactory.getEscapeEngine();
-            ge.gameLoop();
-            root = ge.mapFactory.getEscapeMap().load();
-        }
-        else if(text.equals("Play Quest")){
-            QuestEngine ge = engineFactory.getQuestEngine();
-            ge.gameLoop();
-            root = ge.mapFactory.getQuestMap().load();
-        }
+
         return root;
     }
     public static ScreenManager getInstance(int width, int height, Parent root){

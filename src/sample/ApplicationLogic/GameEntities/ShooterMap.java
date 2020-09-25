@@ -81,52 +81,42 @@ public class ShooterMap extends AbstractMap {
                 GameObject gameObject;
 
                 if(i == loopnumber - 1){
-                    if( !featureExclude.contains("Boss")) {
-                        locationManager.generateLocation(4000, 4200, 150, 200);
-                        double x = locationManager.getX();
-                        double y = locationManager.getY();
-                        gameObject = new Boss(x, y, mapLevel);
-                        gameObjects.add(gameObject);
-                    }
+                    locationManager.generateLocation(4000, 4200, 150, 200);
+                    double x = locationManager.getX();
+                    double y = locationManager.getY();
+                    gameObject = new Boss(x, y, mapLevel);
+                    gameObjects.add(gameObject);
                 } else {
                     if(i < 5){
-                        if( !featureExclude.contains("Small Enemy")) {
-                            locationManager.generateLocation(750, 1100, 50, 370);
-                            double x = locationManager.getX();
-                            double y = locationManager.getY();
-                            gameObject = new SmallEnemy(x, y, true);
-                            gameObjects.add(gameObject);
-                        }
+                        locationManager.generateLocation(750, 1100, 50, 370);
+                        double x = locationManager.getX();
+                        double y = locationManager.getY();
+                        gameObject = new SmallEnemy(x, y, true);
+                        gameObjects.add(gameObject);
                     }
                     else{
 
                         if(i % 4 == 0) {
-                            if( !featureExclude.contains("Big Enemy")) {
-                                locationManager.generateLocation(1000, 3750, 100, 300);
-                                double x = locationManager.getX();
-                                double y = locationManager.getY();
-                                gameObject = new BigEnemy(x, y, mapLevel);
-                                gameObject.setVisible(false);
-                                gameObjects.add(gameObject);
-                            }
+                            locationManager.generateLocation(1000, 3750, 100, 300);
+                            double x = locationManager.getX();
+                            double y = locationManager.getY();
+                            gameObject = new BigEnemy(x, y, mapLevel);
+                            gameObject.setVisible(false);
+                            gameObjects.add(gameObject);
                         } else {
-                            if( !featureExclude.contains("Small Enemy")) {
-                                locationManager.generateLocation(1100, 3750, 50, 370);
-                                double x = locationManager.getX();
-                                double y = locationManager.getY();
-                                gameObject = new SmallEnemy(x, y, false);
-                                gameObjects.add(gameObject);
-                            }
+                            locationManager.generateLocation(1100, 3750, 50, 370);
+                            double x = locationManager.getX();
+                            double y = locationManager.getY();
+                            gameObject = new SmallEnemy(x, y, false);
+                            gameObjects.add(gameObject);
                         }
 
                         if(i % 10 == 0) {
-                            if( !featureExclude.contains("Power up")) {
-                                GameObject powerUp1;
-                                locationManager.generateLocation(1000, 3600, 100, 400);
-                                powerUp1 = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), mapLevel);
-                                powerUp1.setVisible(false);
-                                gameObjects.add(powerUp1);
-                            }
+                            GameObject powerUp1;
+                            locationManager.generateLocation(1000, 3600, 100, 400);
+                            powerUp1 = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), mapLevel);
+                            powerUp1.setVisible(false);
+                            gameObjects.add(powerUp1);
                         }
                     }
 
@@ -208,21 +198,22 @@ public class ShooterMap extends AbstractMap {
                             mage.getBullets().get(k).draw(gc);
                         }
 
-                        for(int i = 0;i < gameObjects.size(); i++){
-                            gameObjects.get(i).update(elapsedTime);
-                            gameObjects.get(i).draw(gc);
-                            if(gameObjects.get(i).toString().equals("Big Enemy")){
-                                ((BigEnemy)gameObjects.get(i)).shoot();
-                                for(int j = 0; j < ((BigEnemy)gameObjects.get(i)).getBullets().size(); j++){
-                                    ((BigEnemy)gameObjects.get(i)).getBullets().get(j).update(elapsedTime);
-                                    ((BigEnemy)gameObjects.get(i)).getBullets().get(j).draw(gc);
+                        for(int i = 0; i < gameObjects.size(); i++){
+                            GameObject currentObject = gameObjects.get(i);
+                            currentObject.update(elapsedTime);
+                            currentObject.draw(gc);
+                            if(currentObject.toString().equals("Big Enemy")){
+                                ((BigEnemy)currentObject).shoot();
+                                for(int j = 0; j < ((BigEnemy)currentObject).getBullets().size(); j++){
+                                    ((BigEnemy)currentObject).getBullets().get(j).update(elapsedTime);
+                                    ((BigEnemy)currentObject).getBullets().get(j).draw(gc);
                                 }
                             }
-                            if(gameObjects.get(i).toString().equals("Boss")){
-                                ((Boss)gameObjects.get(i)).useAbility();
-                                for(int j = 0; j < ((Boss)gameObjects.get(i)).getBullets().size(); j++){
-                                    ((Boss)gameObjects.get(i)).getBullets().get(j).update(elapsedTime);
-                                    ((Boss)gameObjects.get(i)).getBullets().get(j).draw(gc);
+                            if(currentObject.toString().equals("Boss")){
+                                ((Boss)currentObject).useAbility();
+                                for(int j = 0; j < ((Boss)currentObject).getBullets().size(); j++){
+                                    ((Boss)currentObject).getBullets().get(j).update(elapsedTime);
+                                    ((Boss)currentObject).getBullets().get(j).draw(gc);
                                 }
                             }
                         }
@@ -250,7 +241,7 @@ public class ShooterMap extends AbstractMap {
         head = new Text("Score: " + score);
         head.setTranslateX(350);
         head.setTranslateY(-200);
-        head.setId("header-help");
+        head.setId("score-text");
         if(t == null){
             t = new Thread(this);
             t.start();

@@ -83,9 +83,9 @@ public class SoundEngine {
                 case BULLET_HIT_SOUND:
                     bulletHit.play();
                     break;
-                case SKILL_USED_SOUND:
-                    skillUsed.play();
-                    break;
+//                case SKILL_USED_SOUND:
+//                    skillUsed.play();
+//                    break;
                 case POWER_UP_SOUND:
                     powerUp.play();
                     break;
@@ -104,10 +104,6 @@ public class SoundEngine {
     }
 
     public void pauseUnPauseMusic(){
-        /*
-        if (!music1.isAutoPlay())
-            music1.setAutoPlay(true);
-            */
         this.musicEnabled = !this.musicEnabled;
         this.music1.setMute(!musicEnabled);
         this.music2.setMute(!musicEnabled);

@@ -2,7 +2,6 @@ package sample.ApplicationLogic.GameEntities;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import sample.ApplicationLogic.GameEntities.GameObject;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

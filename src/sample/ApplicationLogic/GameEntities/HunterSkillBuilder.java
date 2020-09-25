@@ -2,7 +2,7 @@ package sample.ApplicationLogic.GameEntities;
 
 import java.io.FileNotFoundException;
 
-public class HunterSkillBuilder extends AbstarctSkillBuilder {
+public class HunterSkillBuilder extends AbstractSkillBuilder {
 
     //Constructor
     public HunterSkillBuilder() throws FileNotFoundException {

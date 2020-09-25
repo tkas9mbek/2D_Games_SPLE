@@ -60,7 +60,7 @@ public class EscapeEngine extends AbstractEngine{
             try {
                 flag = cm.checkGameObjectCollision(obstacle, hero);
                 if (flag) {
-                    if(hero.getXPos() <= obstacle.getXPos()) {
+                    if(hero.getXPos() <= obstacle.getXPos() && hero.getXPos() >= 2) {
                         hero.setLocation(hero.getXPos() - 2, hero.getYPos());
                     } else {
                         hero.setLocation(hero.getXPos() + 2, hero.getYPos());

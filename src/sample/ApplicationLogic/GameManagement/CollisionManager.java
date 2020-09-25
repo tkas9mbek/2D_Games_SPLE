@@ -4,17 +4,14 @@ import sample.ApplicationLogic.GameEntities.GameObject;
 
 public class CollisionManager {
     private static CollisionManager cm;
-    private GameObject object1;
-    private GameObject object2;
     private CollisionManager(){  }
     public boolean checkGameObjectCollision(GameObject g1, GameObject g2){
-        object1 = g1;
-        object2 = g2;
         double xPosOfEnemy = g1.getCollisionRectangle().getX();
         double yPosOfEnemy = g1.getCollisionRectangle().getY();
         double widthOfEnemy = g1.getCollisionRectangle().getWidth();
         double heightOfEnemy = g1.getCollisionRectangle().getHeight();
-        if(g2.getCollisionRectangle().intersects(xPosOfEnemy,yPosOfEnemy,widthOfEnemy,heightOfEnemy)){
+        if(g2.getCollisionRectangle() != null &&
+                g2.getCollisionRectangle().intersects(xPosOfEnemy,yPosOfEnemy,widthOfEnemy,heightOfEnemy)){
             return true;
         }
         return false;

@@ -20,7 +20,8 @@ public class Bullet extends GameObject {
     private final String AXE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\axe.png";
 
     private int damage;
-    private int ID; // 1 for submarine bullets
+    private int ID;
+    // 1 for submarine bullets
     // 2 for enemy bullets
     // 3 for enemy skills
 

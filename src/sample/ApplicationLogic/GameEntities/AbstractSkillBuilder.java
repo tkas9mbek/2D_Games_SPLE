@@ -2,7 +2,7 @@ package sample.ApplicationLogic.GameEntities;
 
 import javafx.scene.canvas.GraphicsContext;
 
-abstract public class AbstarctSkillBuilder {
+abstract public class AbstractSkillBuilder {
 
     //Attributes
     public Skill skills[];

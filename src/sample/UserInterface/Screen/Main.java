@@ -6,22 +6,15 @@ import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import sample.ApplicationLogic.GameManagement.SoundEngine;
 import sample.UserInterface.InputManagement.InputManager;
-
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Main extends Application implements EventHandler<ActionEvent>{
-    private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
-
     private static Parent root;
-    //private static Parent root1;
     private static ScreenManager sm;
     private static Stage primaryStage;
     private static Scene menuscene;
@@ -40,41 +33,57 @@ public class Main extends Application implements EventHandler<ActionEvent>{
         sm = ScreenManager.getInstance(852,480,root);
         root = sm.getRoot();
         //root1 = sm.getRoot();
-        this.primaryStage = primaryStage;
-        //Header
-        File file = new File(CONFIGURATION_FILE);
-        Scanner sc = new Scanner(file);
-        String game = sc.next();
-        System.out.println(game);
+        Main.primaryStage = primaryStage;
 
-        Text header = new Text(game + " Game by cos9");
+        //Header
+        Text header = new Text("2D Games by cos9");
         header.setId("header-string");
         header.setTranslateX(200);
         header.setTranslateY(50);
-        //e -> primaryStage.getScene().setRoot(sm.update(playbutton.getText()))
-        //Buttons
-        //Buttons
 
-        Button playbutton = new Button("Play " + game);
-        playbutton.setTranslateX(335);
-        playbutton.setTranslateY(175);
-        playbutton.getStyleClass().add("menu-button");
-        playbutton.setOnAction(this);
+        Text help = new Text("arrows: move\n" +
+                "space: shoot\n" +
+                "z, x, c: skills");
+        help.setId("header-help");
+        help.setTranslateX(525);
+        help.setTranslateY(235);
+
+        Button playShooterButton = new Button("Play Shooter");
+        playShooterButton.setTranslateX(350);
+        playShooterButton.setTranslateY(150);
+        playShooterButton.setMinWidth(125);
+        playShooterButton.getStyleClass().add("menu-button");
+        playShooterButton.setOnAction(this);
+
+        Button playEscapeButton = new Button("Play Escape");
+        playEscapeButton.setTranslateX(350);
+        playEscapeButton.setTranslateY(210);
+        playEscapeButton.setMinWidth(125);
+        playEscapeButton.getStyleClass().add("menu-button");
+        playEscapeButton.setOnAction(this);
+
+        Button playQuestButton = new Button("Play Quest");
+        playQuestButton.setTranslateX(350);
+        playQuestButton.setTranslateY(270);
+        playQuestButton.setMinWidth(125);
+        playQuestButton.getStyleClass().add("menu-button");
+        playQuestButton.setOnAction(this);
 
         Button exitbutton = new Button("Quit Game");
-        exitbutton.setTranslateX(335);
-        exitbutton.setTranslateY(250);
+        exitbutton.setTranslateX(350);
+        exitbutton.setTranslateY(330);
+        exitbutton.setMinWidth(125);
         exitbutton.getStyleClass().add("menu-button");
         exitbutton.setOnAction(this);
 
 
-        ((GridPane)root).getChildren().addAll(playbutton, header, exitbutton);
+        ((GridPane)root).getChildren().addAll(playShooterButton, playEscapeButton, playQuestButton, header, exitbutton, help);
 
         Scene x = new Scene(root);
-        this.primaryStage.setScene(x);
+        Main.primaryStage.setScene(x);
         new Thread(new InputManager()).start();
         SoundEngine.getInstance().startMusic();
-        this.primaryStage.show();
+        Main.primaryStage.show();
     }
     public static GridPane getPane(){
         return (GridPane)root;
@@ -86,9 +95,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
     @Override
     public void handle(ActionEvent e){
         Parent root1 = null;
+        System.out.println(((Button)(e.getSource())).getText());
         try {
             root1 = sm.update(((Button)(e.getSource())).getText());
-        } catch (FileNotFoundException ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
         if(((Button)(e.getSource())).getText().equals("Quit Game")){

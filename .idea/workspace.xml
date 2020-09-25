@@ -2,14 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/META-INF/Shooter.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/AbstarctSkillBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/AbstractMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/AbstractMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Boss.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Boss.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Energy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Energy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/EscapeMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/EscapeMap$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/EscapeMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/EscapeMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Health.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Health.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/HunterSkillBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/HunterSkillBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/MageSkillBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/MageSkillBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Neutral.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/Neutral.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/ObjectRandomLocationManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/ObjectRandomLocationManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/QuestMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/QuestMap$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/QuestMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/QuestMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/ShooterMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/ShooterMap$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/ShooterMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameEntities/ShooterMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameManagement/CollisionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameManagement/CollisionManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameManagement/SoundEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/ApplicationLogic/GameManagement/SoundEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/UserInterface/Screen/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/UserInterface/Screen/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/UserInterface/Screen/ScreenManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/UserInterface/Screen/ScreenManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/UserInterface/Screen/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/UserInterface/Screen/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Shooter/sample/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shooter/sample/configuration.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/configuration.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstarctSkillBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractSkillBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Boss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Energy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Energy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Health.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Health.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/HunterSkillBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/HunterSkillBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/MageSkillBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/MageSkillBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Neutral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Neutral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ObjectRandomLocationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ObjectRandomLocationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/QuestMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/QuestMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ShooterMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ShooterMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images/dark-mage.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images/dark-mage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/CollisionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/CollisionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/SoundEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/SoundEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/UserInterface/Screen/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/UserInterface/Screen/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/UserInterface/Screen/ScreenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/UserInterface/Screen/ScreenManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/UserInterface/Screen/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/UserInterface/Screen/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/configuration.txt" beforeDir="false" />
     </list>
-    <ignored path="JavaFxApplication.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,192 +100,12 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/configuration.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="9" selection-start-column="9" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret line="15" column="78" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractHero.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-              <folding>
-                <element signature="e#141#142#0" expanded="true" />
-                <element signature="e#168#169#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/ShooterEngine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapeMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/MapFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/QuestMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
-              <folding>
-                <element signature="e#9992#9993#0" expanded="true" />
-                <element signature="e#10034#10035#0" expanded="true" />
-                <element signature="e#10082#10083#0" expanded="true" />
-                <element signature="e#10121#10122#0" expanded="true" />
-                <element signature="e#10161#10162#0" expanded="true" />
-                <element signature="e#10193#10194#0" expanded="true" />
-                <element signature="e#10237#10238#0" expanded="true" />
-                <element signature="e#10266#10267#0" expanded="true" />
-                <element signature="e#10321#10322#0" expanded="true" />
-                <element signature="e#10357#10358#0" expanded="true" />
-                <element signature="e#10404#10405#0" expanded="true" />
-                <element signature="e#10436#10437#0" expanded="true" />
-                <element signature="e#10497#10498#0" expanded="true" />
-                <element signature="e#10539#10540#0" expanded="true" />
-                <element signature="e#10586#10587#0" expanded="true" />
-                <element signature="e#10621#10622#0" expanded="true" />
-                <element signature="e#10650#10651#0" expanded="true" />
-                <element signature="e#10678#10679#0" expanded="true" />
-                <element signature="e#10717#10718#0" expanded="true" />
-                <element signature="e#10751#10752#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/EngineFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ShooterMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="122" column="66" selection-start-line="122" selection-start-column="66" selection-end-line="122" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#9810#9811#0" expanded="true" />
-                <element signature="e#9842#9843#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>mapFactory.getShooterMap()</find>
-      <find>ShooterMap.getMap()</find>
-      <find>map.getMage()</find>
-      <find>flag1</find>
-      <find>flag2</find>
-      <find>flag3</find>
-      <find>dir_loc</find>
-      <find>syste</find>
-      <find>system.out</find>
-      <find>speed</find>
-      <find>out</find>
-      <find>sub</find>
-      <find>setUnlocked</find>
-      <find>COOLDOWN_IMAGE</find>
-      <find>hero</find>
-      <find>quest</find>
-      <find>bullets</find>
-      <find>attackCooldown</find>
-      <find>getBull</find>
-      <find>sys</find>
-      <find>getBulle</find>
-      <find>currentMapNo</find>
-      <find>s</find>
-      <find>questMap.heroFactory.getHunter()</find>
-      <find>skills</find>
-      <find>setOnCooldown</find>
-      <find>updateStats</find>
-      <find>maxCooldownTime</find>
-      <find>useSkill</find>
-      <find>gold bag</find>
-    </findStrings>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -251,140 +115,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Boss.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Submarine.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PrisonGuardian.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/SkillManager.java" />
-        <option value="$PROJECT_DIR$/src/sample/UserInterface/Screen/PauseMenu.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/GameEngine.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Map.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hero.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapePowerUp.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractEngine.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractHero.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbsctractMap.java" />
-        <option value="$PROJECT_DIR$/src/sample/UserInterface/Screen/GameEndPane.java" />
-        <option value="$PROJECT_DIR$/src/sample/UserInterface/Screen/GameOverPane.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/CollisionManager.java" />
-        <option value="$PROJECT_DIR$/src/sample/UserInterface/InputManagement/InputManager.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/HeroFactory.java" />
-        <option value="$PROJECT_DIR$/src/sample/UserInterface/Screen/ScreenManager.java" />
-        <option value="$PROJECT_DIR$/src/sample/UserInterface/Screen/Main.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Trap.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/SmallEnemy.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Mage.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Bullet.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Obstacle.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Enemy.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Item.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Neutral.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/MageSkillBuilder.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstarctSkillBuilder.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skill.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/HunterSkillBuilder.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Experience.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Health.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skeleton.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PowerUp.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/AbstractEngine.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/QuestEngine.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractMap.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ShooterMap.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/MapFactory.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/ShooterEngine.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/EscapeEngine.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/EngineFactory.java" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/QuestMap.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/sample/configuration.txt" />
-        <option value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapeMap.java" />
-      </list>
-    </option>
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-155" />
-    <option name="y" value="-23" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
-  </component>
+  <component name="ProjectId" id="1i18wyQb0EGvzxtjRnEA0950gbu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Shooter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shooter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shooter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shooter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shooter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="ApplicationLogic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shooter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="ApplicationLogic" type="462c0819:PsiDirectoryNode" />
-              <item name="GameEntities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shooter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="ApplicationLogic" type="462c0819:PsiDirectoryNode" />
-              <item name="GameManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shooter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="FileManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shooter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="GoToClass.includeLibraries" value="false" />
@@ -399,6 +140,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -412,20 +154,17 @@
       <recent name="sample.ApplicationLogic.GameEntities" />
       <recent name="sample.ApplicationLogic.GameManagement" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tkas9\IdeaProjects\Shooter\src\sample\ApplicationLogic\GameEntities\images" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main (1)">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -437,12 +176,6 @@
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sample.UserInterface.Screen.Main" />
@@ -476,6 +209,17 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -521,6 +265,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -559,558 +304,42 @@
       <workItem from="1577275031408" duration="1588000" />
       <workItem from="1577278739411" duration="656000" />
       <workItem from="1577352906820" duration="2561000" />
+      <workItem from="1601063985467" duration="4496000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97706000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.26818183" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="UI Designer" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3268921" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.061488673" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32850242" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3268921" />
-      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info anchor="bottom" id="Terminal" order="16" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2961832" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="UI Designer" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3268921" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.05042017" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32850242" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3268921" />
-      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="15" />
-      <window_info anchor="bottom" id="Terminal" order="16" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1323" height="150" key="GridCell.Tab.0.bottom" timestamp="1601068425675">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="150" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1601068425675" />
+    <state width="1323" height="150" key="GridCell.Tab.0.center" timestamp="1601068425675">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="150" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1601068425675" />
+    <state width="1323" height="150" key="GridCell.Tab.0.left" timestamp="1601068425675">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="150" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1601068425675" />
+    <state width="1323" height="150" key="GridCell.Tab.0.right" timestamp="1601068425675">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="150" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1601068425675" />
+    <state x="0" y="0" width="585" height="738" key="find.popup" timestamp="1601065813198">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="0" y="0" width="585" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1601065813198" />
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/images/Skeleton.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapePowerUp.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PrisonGuardian.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractEngine.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/UserInterface/Screen/PauseMenu.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/UserInterface/Screen/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ObjectRandomLocationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Boss.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="84" column="123" selection-start-line="84" selection-start-column="123" selection-end-line="84" selection-end-column="123" />
-          <folding>
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1405#1406#0" expanded="true" />
-            <element signature="e#1755#1756#0" expanded="true" />
-            <element signature="e#1793#1794#0" expanded="true" />
-            <element signature="e#1833#1834#0" expanded="true" />
-            <element signature="e#1869#1870#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FileManagement/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/SoundEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/SettingManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/UserInterface/Screen/GameEndPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="35" column="40" selection-start-line="33" selection-start-column="8" selection-end-line="35" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/UserInterface/Screen/GameOverPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/HeroFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Trap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Energy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/UserInterface/Screen/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/UserInterface/InputManagement/InputManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Mage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="143" column="27" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/SmallEnemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="71" column="71" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
-          <folding>
-            <element signature="e#4646#4647#0" expanded="true" />
-            <element signature="e#4898#4899#0" expanded="true" />
-            <element signature="e#4959#4960#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Obstacle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1832#1833#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="22" selection-end-line="29" />
-          <folding>
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/UserInterface/Screen/ScreenManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Neutral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1072#1073#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5899#5900#0" expanded="true" />
-            <element signature="e#5929#5930#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/HunterSkillBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/MageSkillBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstarctSkillBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Hunter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <element signature="e#2038#2039#0" expanded="true" />
-            <element signature="e#2072#2073#0" expanded="true" />
-            <element signature="e#2395#2396#0" expanded="true" />
-            <element signature="e#2430#2431#0" expanded="true" />
-            <element signature="e#5876#5877#0" expanded="true" />
-            <element signature="e#5905#5906#0" expanded="true" />
-            <element signature="e#5949#5950#0" expanded="true" />
-            <element signature="e#5979#5980#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Skeleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Experience.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/BigEnemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/Health.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="e#2301#2302#0" expanded="true" />
-            <element signature="e#2332#2333#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/PowerUp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/CollisionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/AbstractEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="52" lean-forward="true" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/EscapeEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/QuestEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret line="15" column="78" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractHero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <element signature="e#141#142#0" expanded="true" />
-            <element signature="e#168#169#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/ShooterEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/QuestMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
-          <folding>
-            <element signature="e#9992#9993#0" expanded="true" />
-            <element signature="e#10034#10035#0" expanded="true" />
-            <element signature="e#10082#10083#0" expanded="true" />
-            <element signature="e#10121#10122#0" expanded="true" />
-            <element signature="e#10161#10162#0" expanded="true" />
-            <element signature="e#10193#10194#0" expanded="true" />
-            <element signature="e#10237#10238#0" expanded="true" />
-            <element signature="e#10266#10267#0" expanded="true" />
-            <element signature="e#10321#10322#0" expanded="true" />
-            <element signature="e#10357#10358#0" expanded="true" />
-            <element signature="e#10404#10405#0" expanded="true" />
-            <element signature="e#10436#10437#0" expanded="true" />
-            <element signature="e#10497#10498#0" expanded="true" />
-            <element signature="e#10539#10540#0" expanded="true" />
-            <element signature="e#10586#10587#0" expanded="true" />
-            <element signature="e#10621#10622#0" expanded="true" />
-            <element signature="e#10650#10651#0" expanded="true" />
-            <element signature="e#10678#10679#0" expanded="true" />
-            <element signature="e#10717#10718#0" expanded="true" />
-            <element signature="e#10751#10752#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameManagement/EngineFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/ShooterMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="122" column="66" selection-start-line="122" selection-start-column="66" selection-end-line="122" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9810#9811#0" expanded="true" />
-            <element signature="e#9842#9843#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/AbstractMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/MapFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/configuration.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ApplicationLogic/GameEntities/EscapeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

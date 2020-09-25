@@ -57,55 +57,47 @@ public class EscapeMap extends AbstractMap {
             double yLoc = 25;
             double x;
 
-            if( !featureExclude.contains("Small Enemy")) {
-                for (int i = 5; i < 400; i = i + 120) {
-                    gameObject = new SmallEnemy(5, i, true);
-                    gameObjects.add(gameObject);
-                }
+            for (int i = 5; i < 400; i = i + 120) {
+                gameObject = new SmallEnemy(5, i, true);
+                gameObjects.add(gameObject);
             }
 
             for(int i = 800; i < 50000;) {
 
                 int choice = (int) (Math.random() * 18);
                 if (choice < 7) {
-                    if( !featureExclude.contains("Obstacles")) {
-                        locationManager.generateLocation(i = i + 100, i + 25, 30, 400);
-                        x = locationManager.getX();
-                        yLoc = (yLoc + (int) (Math.random() * 120 + 120)) % 440;
-                        gameObject = new Obstacle(x, yLoc, true, 2);
-                        gameObjects.add(gameObject);
-                    }
+                    locationManager.generateLocation(i = i + 100, i + 25, 30, 400);
+                    x = locationManager.getX();
+                    yLoc = (yLoc + (int) (Math.random() * 120 + 120)) % 440;
+                    gameObject = new Obstacle(x, yLoc, true, 2);
+                    gameObjects.add(gameObject);
+
                 } else if (choice < 8) {
-                    if( !featureExclude.contains("Obstacles")) {
-                        locationManager.generateLocation(i = i + 150, i + 25, 30, 400);
-                        x = locationManager.getX();
-                        yLoc = yLoc > 200 ? 3 : 337;
-                        gameObject = new Obstacle(x, yLoc, true, 1);
-                        gameObjects.add(gameObject);
-                        yLoc = (yLoc + (int) (Math.random() * 140 + 140)) % 440;
-                    }
+                    locationManager.generateLocation(i = i + 150, i + 25, 30, 400);
+                    x = locationManager.getX();
+                    yLoc = yLoc > 200 ? 3 : 337;
+                    gameObject = new Obstacle(x, yLoc, true, 1);
+                    gameObjects.add(gameObject);
+                    yLoc = (yLoc + (int) (Math.random() * 140 + 140)) % 440;
+
                 } else if (choice < 14) {
-                    if( !featureExclude.contains("Trap")) {
-                        locationManager.generateLocation(i = i + 150, i + 25, 30, 400);
-                        x = locationManager.getX();
-                        yLoc = (yLoc + (int) (Math.random() * 85 + 90)) % 420;
-                        gameObject = new Trap(x, yLoc, true);
-                        gameObjects.add(gameObject);
-                    }
+                    locationManager.generateLocation(i = i + 150, i + 25, 30, 400);
+                    x = locationManager.getX();
+                    yLoc = (yLoc + (int) (Math.random() * 85 + 90)) % 420;
+                    gameObject = new Trap(x, yLoc, true);
+                    gameObjects.add(gameObject);
+
                 } else if (choice < 16) {
-                    if( !featureExclude.contains("Power up")) {
-                        locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
-                        gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), 0);
-                        gameObject.setVisible(false);
-                        gameObjects.add(gameObject);
-                    }
+                    locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
+                    gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), (int) (Math.random() * 2 + 1), 0);
+                    gameObject.setVisible(false);
+                    gameObjects.add(gameObject);
+
                 } else {
-                    if( !featureExclude.contains("Trap")) {
-                        locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
-                        gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), 3, 0);
-                        gameObject.setVisible(false);
-                        gameObjects.add(gameObject);
-                    }
+                    locationManager.generateLocation(i = i + 50, i + 250, 30, 400);
+                    gameObject = new PowerUp(locationManager.getX(), locationManager.getY(), 3, 0);
+                    gameObject.setVisible(false);
+                    gameObjects.add(gameObject);
                 }
             }
         }catch (Exception e){
@@ -115,7 +107,7 @@ public class EscapeMap extends AbstractMap {
 
 
     public void update() {
-        score = score + 0.01;
+        score = score + 0.0033;
         for (int i = 0; i < gameObjects.size(); i++) {
             try {
                 if (gameObjects.get(i).getXPos() <= 0) {
@@ -140,7 +132,7 @@ public class EscapeMap extends AbstractMap {
                 {
                     try{
                         head.setText("Score: " + (int)score);
-                        head.setFill(Color.WHITE);
+
                         double elapsedTime = (currentNanoTime - lastNanoTime) / 1000000000.0;
                         lastNanoTime = currentNanoTime;
 
@@ -172,7 +164,7 @@ public class EscapeMap extends AbstractMap {
         head = new Text("Score: " + (int)score);
         head.setTranslateX(350);
         head.setTranslateY(-200);
-        head.setId("header-help");
+        head.setId("score-text");
         if(t == null){
             t = new Thread(this);
             t.start();

@@ -2,7 +2,7 @@ package sample.ApplicationLogic.GameEntities;
 
 import java.io.FileNotFoundException;
 
-public class MageSkillBuilder extends AbstarctSkillBuilder{
+public class MageSkillBuilder extends AbstractSkillBuilder {
 
     //Attributes
     int subLvl;
