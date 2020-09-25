@@ -21,7 +21,7 @@ public class Health {
         setHealthAmount(maxHealth);
         IMAGES = new Image[imageSize];
         for(int i = 0; i < imageSize; i++ ){
-            IMAGES[i] = new Image(new FileInputStream(System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\health_" + i + ".png"));
+            IMAGES[i] = new Image(new FileInputStream("src\\sample\\ApplicationLogic\\GameEntities\\images\\health_" + i + ".png"));
         }
         object.setSpriteImage( IMAGES[ (healthAmount + 1 ) / (maxHealth / (imageSize - 1) )]);
         update( 0);

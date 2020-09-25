@@ -10,14 +10,14 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Bullet extends GameObject {
-    private final String FIREBALL = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\fireball.png";
-    private final String WATER = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\waterball.png";
-    private final String ARROW = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\arrowL.png";
-    private final String ARROW_R = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\arrowR.png";
-    private final String ORB = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\orb.png";
-    private final String BLUE_FIRE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\dark-missile.png";
+    private final String FIREBALL = "src\\sample\\ApplicationLogic\\GameEntities\\images\\fireball.png";
+    private final String WATER = "src\\sample\\ApplicationLogic\\GameEntities\\images\\waterball.png";
+    private final String ARROW = "src\\sample\\ApplicationLogic\\GameEntities\\images\\arrowL.png";
+    private final String ARROW_R = "src\\sample\\ApplicationLogic\\GameEntities\\images\\arrowR.png";
+    private final String ORB = "src\\sample\\ApplicationLogic\\GameEntities\\images\\orb.png";
+    private final String BLUE_FIRE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\dark-missile.png";
     private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
-    private final String AXE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\axe.png";
+    private final String AXE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\axe.png";
 
     private int damage;
     private int ID;

@@ -21,7 +21,7 @@ public class Energy {
         setEnergyAmount(maxEnergy);
         IMAGES = new Image[imageSize];
         for(int i = 0; i < imageSize; i++ ){
-            IMAGES[i] = new Image(new FileInputStream(System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\energy_" + i + ".png"));
+            IMAGES[i] = new Image(new FileInputStream("src\\sample\\ApplicationLogic\\GameEntities\\images\\energy_" + i + ".png"));
         }
         object.setSpriteImage( IMAGES[ (energyAmount + 1 ) / (maxEnergy / (imageSize - 1) )]);
         update( 0);

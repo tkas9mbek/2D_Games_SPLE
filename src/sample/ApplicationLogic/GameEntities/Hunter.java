@@ -13,8 +13,9 @@ public class Hunter extends AbstractHero {
 
     int VELOCITY = 100;
 
-    private String avatar_left = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\hunter_left.png";
-    private String avatar_right = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\hunter_right.png";
+    private String avatar_left = "src\\sample\\ApplicationLogic\\GameEntities\\images\\hunter_left.png";
+    private String avatar_right = "src\\sample\\ApplicationLogic\\GameEntities\\images\\hunter_right.png";
+    private String SETTINGS = "src\\sample\\Settings.txt";
     private Health health;
     private boolean toLeft = true;
     private HunterSkillBuilder skills;
@@ -139,7 +140,7 @@ public class Hunter extends AbstractHero {
     public void controlHero(){
         try{
             if(InputManager.getPressedKey() != null){
-                String setting = new FileManager("Settings.txt").readFromFile();
+                String setting = new FileManager(SETTINGS).readFromFile();
                 String lines[] = setting.split("\\r?\\n");
                 String pressedKey = InputManager.getPressedKey().toString();
                 if(pressedKey.equals(lines[0])) {

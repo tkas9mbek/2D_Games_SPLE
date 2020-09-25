@@ -12,15 +12,18 @@ import sample.UserInterface.Screen.GameEndPane;
 import sample.UserInterface.Screen.Main;
 
 import java.io.FileNotFoundException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class ShooterMap extends AbstractMap {
     private int score;
     private Text head;
-    private final String FIRST_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\dark-castle.png";
-    private final String SECOND_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\old-castle.jpg";
-    private final String THIRD_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\destroyed-castle.jpg";
+    private final String FIRST_LEVEL_BACKGROUND_IMAGE = "images/dark-castle.png";
+    private final String SECOND_LEVEL_BACKGROUND_IMAGE = "images/old-castle.jpg";
+    private final String THIRD_LEVEL_BACKGROUND_IMAGE = "images/destroyed-castle.jpg";
     private final String[] backgroundImages = {FIRST_LEVEL_BACKGROUND_IMAGE, SECOND_LEVEL_BACKGROUND_IMAGE, THIRD_LEVEL_BACKGROUND_IMAGE};
+    private final URL DIR_LOC = getClass().getResource(".");
+
     private static int mapLevel;
     private int deadCount;
     private Thread t;
@@ -56,7 +59,8 @@ public class ShooterMap extends AbstractMap {
     }
 
     public void setBackgroundImage(String backgroundImage){
-        this.backgroundImage = new BackgroundImage(new javafx.scene.image.Image("file:\\" + backgroundImage,852,480,false,true),
+        System.out.println("file:\\" + DIR_LOC + backgroundImage);
+        this.backgroundImage = new BackgroundImage(new javafx.scene.image.Image(DIR_LOC + backgroundImage,852,480,false,true),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         ((GridPane)this.root).setBackground(new Background(this.backgroundImage));
@@ -193,27 +197,27 @@ public class ShooterMap extends AbstractMap {
                         mage.update(elapsedTime);
                         mage.draw(gc);
                         mage.controlHero();
-                        for(int k = 0; k < mage.getBullets().size(); k++){
-                            mage.getBullets().get(k).update(elapsedTime);
-                            mage.getBullets().get(k).draw(gc);
+
+                        for(Bullet bullet: mage.getBullets()){
+                            bullet.update(elapsedTime);
+                            bullet.draw(gc);
                         }
 
-                        for(int i = 0; i < gameObjects.size(); i++){
-                            GameObject currentObject = gameObjects.get(i);
+                        for (GameObject currentObject : gameObjects) {
                             currentObject.update(elapsedTime);
                             currentObject.draw(gc);
-                            if(currentObject.toString().equals("Big Enemy")){
-                                ((BigEnemy)currentObject).shoot();
-                                for(int j = 0; j < ((BigEnemy)currentObject).getBullets().size(); j++){
-                                    ((BigEnemy)currentObject).getBullets().get(j).update(elapsedTime);
-                                    ((BigEnemy)currentObject).getBullets().get(j).draw(gc);
+                            if (currentObject.toString().equals("Big Enemy")) {
+                                ((BigEnemy) currentObject).shoot();
+                                for (int j = 0; j < ((BigEnemy) currentObject).getBullets().size(); j++) {
+                                    ((BigEnemy) currentObject).getBullets().get(j).update(elapsedTime);
+                                    ((BigEnemy) currentObject).getBullets().get(j).draw(gc);
                                 }
                             }
-                            if(currentObject.toString().equals("Boss")){
-                                ((Boss)currentObject).useAbility();
-                                for(int j = 0; j < ((Boss)currentObject).getBullets().size(); j++){
-                                    ((Boss)currentObject).getBullets().get(j).update(elapsedTime);
-                                    ((Boss)currentObject).getBullets().get(j).draw(gc);
+                            if (currentObject.toString().equals("Boss")) {
+                                ((Boss) currentObject).useAbility();
+                                for (int j = 0; j < ((Boss) currentObject).getBullets().size(); j++) {
+                                    ((Boss) currentObject).getBullets().get(j).update(elapsedTime);
+                                    ((Boss) currentObject).getBullets().get(j).draw(gc);
                                 }
                             }
                         }

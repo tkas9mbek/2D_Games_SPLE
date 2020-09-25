@@ -11,9 +11,9 @@ public class SmallEnemy extends Enemy {
 
     private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
 
-    private final String GOBLIN = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\goblin.png";
-    private final String ORC = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\orc.png";
-    private final String SPEARMAN = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\swordsman.png";
+    private final String GOBLIN = "src\\sample\\ApplicationLogic\\GameEntities\\images\\goblin.png";
+    private final String ORC = "src\\sample\\ApplicationLogic\\GameEntities\\images\\orc.png";
+    private final String SPEARMAN = "src\\sample\\ApplicationLogic\\GameEntities\\images\\swordsman.png";
 
     // map level constructor
     SmallEnemy( double xPos, double yPos, boolean visible) throws FileNotFoundException {

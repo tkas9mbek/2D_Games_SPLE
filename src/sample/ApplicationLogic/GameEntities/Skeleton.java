@@ -22,8 +22,9 @@ public class Skeleton extends AbstractHero {
     public void setShielded(boolean shielded) {
         this.shielded = shielded;
     }
-    private String avatar = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\warlock.png";
-    private String avatar2 = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\warlock_shielded.png";
+    private String avatar = "src\\sample\\ApplicationLogic\\GameEntities\\images\\warlock.png";
+    private String avatar2 = "src\\sample\\ApplicationLogic\\GameEntities\\images\\warlock_shielded.png";
+    private String SETTINGS = "src\\sample\\Settings.txt";
 
     Skeleton() throws FileNotFoundException {
         super(350, 200);
@@ -74,7 +75,7 @@ public class Skeleton extends AbstractHero {
     public void controlHero(){
         try{
             if(InputManager.getPressedKey() != null){
-                String setting = new FileManager("Settings.txt").readFromFile();
+                String setting = new FileManager(SETTINGS).readFromFile();
                 String lines[] = setting.split("\\r?\\n");
                 String pressedKey = InputManager.getPressedKey().toString();
                 if(pressedKey.equals(lines[0])) {

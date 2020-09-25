@@ -1,0 +1,43 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'Shooter.jnlp'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedShooter_id() {
+        dtjava.embed(
+            {
+                id : 'Shooter_id',
+                url : 'Shooter.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '852',
+                height : '480'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedShooter_id);
+</script>
+
+</head><body>
+<h2>Test page for <b>Shooter</b></h2>
+  <b>Webstart:</b> <a href='Shooter.jnlp' onclick="return launchApplication('Shooter.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>

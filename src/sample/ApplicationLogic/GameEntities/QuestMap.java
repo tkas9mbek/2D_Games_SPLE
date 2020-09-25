@@ -17,7 +17,7 @@ public class QuestMap extends AbstractMap {
     private String hint;
     private int mapNo;
     private Text head;
-    private final String SECOND_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\forest.jpg";
+    private final String SECOND_LEVEL_BACKGROUND_IMAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\forest.jpg";
     private Thread t;
     private BackgroundImage backgroundImage;
     private Hunter hero;
@@ -126,7 +126,7 @@ public class QuestMap extends AbstractMap {
                         }
 
                         head.setText(text);
-                        head.setId("score-text");
+                        head.setId("quest-text");
 
                         double elapsedTime = (currentNanoTime - lastNanoTime) / 1000000000.0;
                         lastNanoTime = currentNanoTime;

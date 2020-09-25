@@ -27,3 +27,8 @@
     -fx-fill: white;
     -fx-font-weight: 600;
 }
+#quest-text{
+    -fx-font: 22px Tahoma;
+    -fx-fill: white;
+    -fx-font-weight: 300;
+}

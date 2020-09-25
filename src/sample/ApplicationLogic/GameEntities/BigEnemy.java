@@ -10,9 +10,9 @@ import java.util.Scanner;
 
 public class BigEnemy extends Enemy{
 
-    private final String ARCHER = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\archer.png";
-    private final String MAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\dark-mage.png";
-    private final String LUMBERJACK = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\lumberjack.png";
+    private final String ARCHER = "src\\sample\\ApplicationLogic\\GameEntities\\images\\archer.png";
+    private final String MAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\dark-mage.png";
+    private final String LUMBERJACK = "src\\sample\\ApplicationLogic\\GameEntities\\images\\lumberjack.png";
     private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
 
     private double attackSpeed;

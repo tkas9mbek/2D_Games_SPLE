@@ -7,9 +7,9 @@ import java.io.FileNotFoundException;
 
 public class Trap extends GameObject {
 
-    private final String SPIKE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\trap2.png";
-    private final String TRAP = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\trap.png";
-    private final String MINE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\mine.png";
+    private final String SPIKE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\trap2.png";
+    private final String TRAP = "src\\sample\\ApplicationLogic\\GameEntities\\images\\trap.png";
+    private final String MINE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\mine.png";
 
     // map level constructor
     Trap( double xPos, double yPos, boolean visible) throws FileNotFoundException {

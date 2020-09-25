@@ -16,7 +16,8 @@ public class Mage extends AbstractHero {
     int VELOCITY = 125;
 
     private int subLevel;
-    private String avatar = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\mage.png";
+    private String avatar = "src\\sample\\ApplicationLogic\\GameEntities\\images\\mage.png";
+    private String SETTINGS = "src\\sample\\Settings.txt";
     private Health health;
     private Energy energy;
     private Experience experience;
@@ -180,7 +181,7 @@ public class Mage extends AbstractHero {
     public void controlHero(){
         try{
             if(InputManager.getPressedKey() != null){
-                String setting = new FileManager("Settings.txt").readFromFile();
+                String setting = new FileManager(SETTINGS).readFromFile();
                 String lines[] = setting.split("\\r?\\n");
                 String pressedKey = InputManager.getPressedKey().toString();
                 if(pressedKey.equals(lines[0])) {

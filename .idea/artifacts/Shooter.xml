@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Shooter">
+    <output-path>$PROJECT_DIR$/out/artifacts/Shooter</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="sample.UserInterface.Screen.Main" />
+        <option name="description" value="" />
+        <option name="height" value="480" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="exe" />
+        <option name="title" value="2D Games" />
+        <option name="vendor" value="cos9" />
+        <option name="version" value="" />
+        <option name="width" value="852" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Shooter.jar">
+        <element id="module-output" name="Shooter" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class EscapeMap extends AbstractMap {
     private double score;
     private Text head;
-    private final String SECOND_LEVEL_BACKGROUND_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\prison2.jpg";
+    private final String SECOND_LEVEL_BACKGROUND_IMAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\prison2.jpg";
     private Thread t;
     private BackgroundImage backgroundImage;
     private ObjectRandomLocationManager locationManager;

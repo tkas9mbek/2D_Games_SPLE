@@ -10,7 +10,7 @@ public class CollisionManager {
         double yPosOfEnemy = g1.getCollisionRectangle().getY();
         double widthOfEnemy = g1.getCollisionRectangle().getWidth();
         double heightOfEnemy = g1.getCollisionRectangle().getHeight();
-        if(g2.getCollisionRectangle() != null &&
+        if(g2 != null &&
                 g2.getCollisionRectangle().intersects(xPosOfEnemy,yPosOfEnemy,widthOfEnemy,heightOfEnemy)){
             return true;
         }

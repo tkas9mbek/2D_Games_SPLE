@@ -7,15 +7,15 @@ import java.io.FileNotFoundException;
 
 public class Skill {
 
-    private static final String LOCKED_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\lock.png";
-    private static final String COOLDOWN_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\time.png";
-    private static final String SKILL1_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\diamond.png";
-    private static final String SKILL2_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\fire.png";
-    private static final String SKILL3_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\shield.png";
-    private static final String SKILL4_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\multishot.png";
-    private static final String SKILL5_IMAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\regeneration.png";
-    private static final String SHIELDED = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\shielded.png";
-    private static final String MAGE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\mage.png";
+    private static final String LOCKED_IMAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\lock.png";
+    private static final String COOLDOWN_IMAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\time.png";
+    private static final String SKILL1_IMAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\diamond.png";
+    private static final String SKILL2_IMAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\fire.png";
+    private static final String SKILL3_IMAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\shield.png";
+    private static final String SKILL4_IMAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\multishot.png";
+    private static final String SKILL5_IMAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\regeneration.png";
+    private static final String SHIELDED = "src\\sample\\ApplicationLogic\\GameEntities\\images\\shielded.png";
+    private static final String MAGE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\mage.png";
 
     private double maxEffectTime;
     private double maxCooldownTime;

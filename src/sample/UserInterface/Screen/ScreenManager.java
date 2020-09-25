@@ -8,12 +8,10 @@ import sample.ApplicationLogic.GameManagement.EscapeEngine;
 import sample.ApplicationLogic.GameManagement.QuestEngine;
 import sample.ApplicationLogic.GameManagement.ShooterEngine;
 import java.io.*;
-import java.net.URL;
 
 public class ScreenManager {
-    private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
+    private final String CONFIGURATION_FILE = "src\\sample\\configuration.txt";
     private int width;
-    private final URL DIR_LOC = getClass().getResource(".");
     private int height;
     static private Parent root;
     private static ScreenManager sm;
@@ -21,7 +19,7 @@ public class ScreenManager {
         this.height = height;
         this.width = width;
         ScreenManager.root = root;
-        BackgroundImage myBI= new BackgroundImage(new Image(DIR_LOC +  "\\images\\back.png",852,480,false,true),
+        BackgroundImage myBI= new BackgroundImage(new Image("sample/UserInterface/Screen/images/back.png",852,480,false,true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         ScreenManager.root = new GridPane();

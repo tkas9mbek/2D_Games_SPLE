@@ -1,7 +1,6 @@
 package sample.FileManagement;
 
 import java.io.*;
-import java.nio.Buffer;
 
 public class FileManager {
 
@@ -28,33 +27,10 @@ public class FileManager {
             e.printStackTrace();
         }
         this.fileName = filename;
-        //createFileManager();
     }
 
-
-    //Methods
-
-    public void writeToFile (String highscoreList) {
-        try{
-
-            //bf = new BufferedWriter(writer);
-            writer.write(highscoreList + "\n");
-            //bf.newLine();
-            //fbw.close();
-            //writer.close();
-            if(fileName.equals("Scores.txt"))
-                writer.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        //writer.append(highscoreList);
-        //writer.println(highscoreList);
-
-    }
     public void closeWriter(){
         try{
-            //bf.close();
             writer.close();
         }catch (Exception e){
             e.printStackTrace();
@@ -82,12 +58,6 @@ public class FileManager {
         return returnSt;
 
     }
-
-    /*public static FileManager createFileManager() {
-        if(fileManager == null)
-            fileManager = new FileManager();
-        return fileManager;
-    }*/
 
     public FileManager getFileManager() {
         return fileManager;

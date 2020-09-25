@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 public class Obstacle extends GameObject {
 
-    private final String BARREL = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\box.png";
-    private final String WALL = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\wall.png";
-    private final String TREE = System.getProperty("user.dir") + "\\src\\sample\\ApplicationLogic\\GameEntities\\images\\tree.png";
+    private final String BARREL = "src\\sample\\ApplicationLogic\\GameEntities\\images\\box.png";
+    private final String WALL = "src\\sample\\ApplicationLogic\\GameEntities\\images\\wall.png";
+    private final String TREE = "src\\sample\\ApplicationLogic\\GameEntities\\images\\tree.png";
     private final String CONFIGURATION_FILE = System.getProperty("user.dir") +  "\\src\\sample\\configuration.txt";
 
     // map level constructor
