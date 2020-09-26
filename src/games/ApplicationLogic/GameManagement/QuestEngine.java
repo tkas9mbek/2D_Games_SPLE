@@ -46,9 +46,9 @@ public class QuestEngine extends AbstractEngine{
                     questMap.setEnemies();
                 }
 
-                if(hero.getHealth().getHealthAmount() <= 0 || quests.size() == 0){
+                if(hero.getHealth().getHealthAmount() <= 0){
                     Platform.runLater(
-                            () -> Main.getPrimaryStage().setScene(GameOverPane.getInstance().getScene())
+                            () -> Main.getPrimaryStage().setScene(GameOverPane.getInstance(false).getScene())
                     );
                 }
 
@@ -105,10 +105,9 @@ public class QuestEngine extends AbstractEngine{
                     } else {
                         bullets = ((BigEnemy) enemy).getBullets();
                         for (int j = 0; j < bullets.size() && !flag; j++) {
-                            flag = cm.checkGameObjectCollision(hero
-                                    , bullets.get(j));
+                            flag = cm.checkGameObjectCollision(hero, bullets.get(j));
                             if (flag) {
-                                hero .healthDecrease(((BigEnemy) enemy).getBullets().get(j).getDamage());
+                                hero.healthDecrease(((BigEnemy) enemy).getBullets().get(j).getDamage());
                                 ((BigEnemy) enemy).getBullets().remove(j);
                             }
                         }
@@ -166,7 +165,7 @@ public class QuestEngine extends AbstractEngine{
                 flag = cm.checkGameObjectCollision(home,hero);
                 if( flag && map.getInventory().size() >= 1) {
                     Platform.runLater(
-                            () -> Main.getPrimaryStage().setScene(GameOverPane.getInstance().getScene())
+                            () -> Main.getPrimaryStage().setScene(GameOverPane.getInstance(true).getScene())
                     );
                 }
             } catch (Exception e) {

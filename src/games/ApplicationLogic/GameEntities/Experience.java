@@ -35,7 +35,7 @@ public class Experience {
     }
 
     private void updateStats( int sLvl) {
-        setMaxExperience(expCap / 2 + expCap * subLevel);
+        setMaxExperience(-250 + expCap + expCap * subLevel / 2);
         setCurExperience(0);
         lvlBar.setSpriteImage( LEVEL[sLvl]);
     }

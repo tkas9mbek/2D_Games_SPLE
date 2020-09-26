@@ -8,7 +8,6 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 
 import java.io.FileNotFoundException;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class EscapeMap extends AbstractMap {
@@ -67,7 +66,7 @@ public class EscapeMap extends AbstractMap {
 
             for(int i = 800; i < 50000;) {
 
-                int choice = (int) (Math.random() * 18);
+                int choice = (int) (Math.random() * 19);
                 if (choice < 7) {
                     locationManager.generateLocation(i = i + 100, i + 25, 30, 400);
                     x = locationManager.getX();

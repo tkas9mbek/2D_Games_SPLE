@@ -33,13 +33,13 @@ public class Boss extends BigEnemy {
 
         setHealth(100 + 250 * mapLvl);
         setCollisionDmg(100);
-        setExperiencePrize(150 + 200 * mapLvl);
-        setScorePrize( 150 + 200 * mapLvl);
-        setAttackDamage(10 + 5 * mapLvl);
-        setAmountOfProjectile( 1 + 2 * mapLvl);
-        setAttackSpeed(1);
-        setAbilityCooldown(3);
-        setAbilityDamage( 27 + 5 * mapLvl);
+        setExperiencePrize(200 * mapLvl);
+        setScorePrize( 200 * mapLvl);
+        setAttackDamage(5 + 5 * mapLvl);
+        setAmountOfProjectile( 1);
+        setAttackSpeed(2.2);
+        setAbilityCooldown(5);
+        setAbilityDamage( 14 + 7 * mapLvl);
         setType("Boss");
         bullets = new ArrayList<>();
     }
@@ -80,15 +80,15 @@ public class Boss extends BigEnemy {
     public void useAbility(){
         if( currentCooldown <= 0 && isVisible())
         {
-            try{
-                bullets.add(new Bullet(getXPos(), getYPos() + getSpriteImage().getHeight() / 2 , (int)getAbilityDamage(), 2));
-                currentCooldown = abilityCooldown;
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
+            bullets.add(new Bullet(getXPos(), getYPos() + getSpriteImage().getHeight() / 2 , (int)getAbilityDamage(), 4));
+            currentCooldown = abilityCooldown;
+        }
+        if( getShootCooldown() <= 0 && isVisible()) {
+            bullets.add(new Bullet(getXPos(), getYPos() + getSpriteImage().getHeight() / 2 , (int)getAttackDamage(), 5));
+            setShootCooldown(getAttackSpeed());
         }
     }
+
 
     @Override
     public void update(double time){

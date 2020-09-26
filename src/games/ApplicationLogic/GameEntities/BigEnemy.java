@@ -52,25 +52,27 @@ public class BigEnemy extends Enemy{
             int choice = (int) (Math.random() * 2) + 1;
             type = choice;
             if (choice == 1) {
+                // dark mage
                 setVelocity(-15, (int) (Math.random() * -70) + 35);
                 setSpriteImage(new Image(new FileInputStream(MAGE)));
-                setHealth(60 + 35 * mapLvl);
+                setHealth(30 + 20 * mapLvl);
                 setCollisionDmg(20 + 10 * mapLvl);
-                setExperiencePrize(75 + 50 * mapLvl);
-                setScorePrize(75 + 50 * mapLvl);
-                setAttackDamage(9 + 3 * mapLvl);
+                setExperiencePrize(75 + 25 * mapLvl);
+                setScorePrize(75 + 25 * mapLvl);
+                setAttackDamage(10 + 5 * mapLvl);
                 setAmountOfProjectile(3);
                 setAttackSpeed(5);
             } else {
+                // archer
                 setVelocity(-15, (int) (Math.random() * -35) + 17);
                 setSpriteImage(new Image(new FileInputStream(ARCHER)));
-                setHealth(45 + 30 * mapLvl);
+                setHealth(60 + 35 * mapLvl);
                 setCollisionDmg(20 + 15 * mapLvl);
                 setExperiencePrize(75 + 25 * mapLvl);
                 setScorePrize(75 + 25 * mapLvl);
-                setAttackDamage(10 + 8 * mapLvl);
+                setAttackDamage(12 + 6 * mapLvl);
                 setAmountOfProjectile(1);
-                setAttackSpeed(2.5);
+                setAttackSpeed(2.4);
             }
         }
         if( game.equals("Quest")) {
@@ -135,7 +137,7 @@ public class BigEnemy extends Enemy{
                 double[] arr = new double[amountOfProjectile + 2];
                 arr[1] = getXPos();
                 for (int i = 2; i < amountOfProjectile + 2; i++) {
-                    arr[i] = getYPos() + (getSpriteImage().getHeight()/2) + (25 * (int)(( i - 1)  / 2) * Math.pow(-1, i - 1));
+                    arr[i] = getYPos() + (getSpriteImage().getHeight()/2) + (23 * (int)(( i - 1)  / 2) * Math.pow(-1, i - 1));
                     Bullet x;
 
                         if (type == 1) {
@@ -169,5 +171,13 @@ public class BigEnemy extends Enemy{
     @Override
     public void disappearAnimation() throws FileNotFoundException {
         super.disappearAnimation();
+    }
+
+    public double getShootCooldown() {
+        return shootCooldown;
+    }
+
+    public void setShootCooldown(double shootCooldown) {
+        this.shootCooldown = shootCooldown;
     }
 }

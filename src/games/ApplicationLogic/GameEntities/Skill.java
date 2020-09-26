@@ -10,7 +10,7 @@ public class Skill {
     private static final String PROJECT_DIR = System.getProperty("user.dir") + "\\game-assets\\";
     private static final String LOCKED_IMAGE = PROJECT_DIR + "ApplicationLogic\\GameEntities\\images\\lock.png";
     private static final String COOLDOWN_IMAGE = PROJECT_DIR + "ApplicationLogic\\GameEntities\\images\\time.png";
-    private static final String SKILL1_IMAGE = PROJECT_DIR + "ApplicationLogic\\GameEntities\\images\\diamond.png";
+    private static final String SKILL1_IMAGE = PROJECT_DIR + "ApplicationLogic\\GameEntities\\images\\toxin.png";
     private static final String SKILL2_IMAGE = PROJECT_DIR + "ApplicationLogic\\GameEntities\\images\\fire.png";
     private static final String SKILL3_IMAGE = PROJECT_DIR + "ApplicationLogic\\GameEntities\\images\\shield.png";
     private static final String SKILL4_IMAGE = PROJECT_DIR + "ApplicationLogic\\GameEntities\\images\\multishot.png";
@@ -22,13 +22,12 @@ public class Skill {
     private double maxCooldownTime;
 
     //delegation pattern
-    private GameObject object;
+    private final GameObject object;
     private double timeOfEffect;
     private double cooldownTime;
     private int finalAttack;
     private int skillID;
     private boolean unlocked;
-    private boolean onEffect;
     private boolean onCooldown;
     private int energyCost;
     private int mageLvl;
@@ -65,19 +64,19 @@ public class Skill {
     private void updateStats( int mageLvl) {
         this.mageLvl = mageLvl;
         if( skillID == 1){
-            maxEffectTime = 10;
-            maxCooldownTime = 25;
+            maxEffectTime = 8;
+            maxCooldownTime = 20;
             setEnergyCost(30);
         }
         if( skillID == 2){
-            maxEffectTime = 9;
-            maxCooldownTime = 32;
-            setEnergyCost(30);
+            maxEffectTime = 10;
+            maxCooldownTime = 22;
+            setEnergyCost(20);
         }
         if( skillID == 3){
             maxEffectTime = 8;
             maxCooldownTime = 28;
-            setEnergyCost(40);
+            setEnergyCost(25);
         }
         setUnlocked(mageLvl);
     }
@@ -85,15 +84,15 @@ public class Skill {
     public void waterFireballs(Mage mage) throws FileNotFoundException {
         useSkill();
         finalAttack = mage.getAttackDamage();
-        mage.setAmountOfProjectile(mageLvl + 1);
-        mage.setAttackDamage(11);
+        mage.setAmountOfProjectile(3);
+        mage.setAttackDamage(mageLvl * 3 + 6);
         setOnEffect();
         setTimeOfEffect( maxEffectTime);
     }
 
     public void speedBooster(Mage mage) throws FileNotFoundException {
         useSkill();
-        mage.setAttackSpeed( 0.4 );
+        mage.setAttackSpeed( 0.33 );
         setOnEffect();
         setTimeOfEffect( maxEffectTime);
     }
@@ -183,7 +182,6 @@ public class Skill {
     }
 
     public void setOnEffect() {
-        onEffect = timeOfEffect > 0;
     }
 
     public boolean isUnlocked() {

@@ -21,11 +21,19 @@ public class ShooterEngine extends AbstractEngine{
         try{
             while (true) {
                 gameShooterMap.update();
-                if(gameShooterMap.heroFactory.getMage().getHealth().getHealthAmount() <= 0 || gameShooterMap.isGameWon()){
+                if(gameShooterMap.isGameWon()){
                     Platform.runLater(
-                            () -> Main.getPrimaryStage().setScene(GameOverPane.getInstance().getScene())
+                            () -> {
+                                Main.getPrimaryStage().setScene(GameOverPane.getInstance(true).getScene());
+                            }
                     );
                 }
+                if(gameShooterMap.heroFactory.getMage().getHealth().getHealthAmount() <= 0){
+                    Platform.runLater(
+                            () -> Main.getPrimaryStage().setScene(GameOverPane.getInstance(false).getScene())
+                    );
+                }
+
                 checkCollision();
             }
 

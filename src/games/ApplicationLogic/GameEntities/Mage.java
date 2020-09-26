@@ -44,7 +44,7 @@ public class Mage extends AbstractHero {
         energy = new Energy( subLevel);
         setAmountOfProjectile(1);
         setAttackSpeed(0.8);
-        setAttackDamage(12 + 8 * subLevel);
+        setAttackDamage(12 + 6 * subLevel);
     }
 
     public int getSubLevel() {
@@ -140,15 +140,16 @@ public class Mage extends AbstractHero {
 
             arr[1] = 1;
             arr[2] = getXPos() + getWidth();
-            for (int i = 0; i < amountOfProjectile; i++) {
-                arr[i + 3] = getYPos() + (getSpriteImage().getHeight() / 2) + (15 * (int)(( i + 1)  / 2) * Math.pow(-1, i + 1));
-                try{
-                    bullets.add(new Bullet(arr[2], arr[i + 3], attackDamage, 1));
+
+            if(amountOfProjectile > 1) {
+                for (int i = 0; i < amountOfProjectile; i++) {
+                    arr[i + 3] = getYPos() + (getSpriteImage().getHeight() / 2) + (34 * (int)(( i + 1)  / 2) * Math.pow(-1, i + 1));
+                    bullets.add(new Bullet(arr[2], arr[i + 3], attackDamage, 0));
                 }
-                catch (Exception e){
-                    e.printStackTrace();
-                }
+            } else {
+                bullets.add(new Bullet(arr[2], getYPos() + (getSpriteImage().getHeight() / 2 - 13), attackDamage, 1));
             }
+
             attackCooldown = attackSpeed;
         }
     }
@@ -157,9 +158,9 @@ public class Mage extends AbstractHero {
     public void update(double time){
         try{
             if( ((getXPos() + time * getXVelocity()) <= 425 - getWidth())
-                                    && ((getXPos() + time * getXVelocity()) >= 0)
-                                    && ((getYPos() + time * getYVelocity()) <= 480 - getHeight())
-                                    && ((getYPos() + time * getYVelocity()) >= 0) ){
+                    && ((getXPos() + time * getXVelocity()) >= 0)
+                    && ((getYPos() + time * getYVelocity()) <= 480 - getHeight())
+                    && ((getYPos() + time * getYVelocity()) >= 0) ){
                 super.update( time);
             }
             skills.update( time, this);

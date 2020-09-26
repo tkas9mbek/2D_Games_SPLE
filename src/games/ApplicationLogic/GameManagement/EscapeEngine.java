@@ -29,7 +29,7 @@ public class EscapeEngine extends AbstractEngine{
 
                     if(gameEscapeMap.heroFactory.getSkeleton().isDead()){
                         Platform.runLater(
-                                () -> Main.getPrimaryStage().setScene(GameOverPane.getInstance().getScene())
+                                () -> Main.getPrimaryStage().setScene(GameOverPane.getInstance(false).getScene())
                         );
                     }
 

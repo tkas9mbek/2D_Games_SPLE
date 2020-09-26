@@ -13,7 +13,8 @@ public class GameOverPane {
     private final GridPane gridPaneGO;
     private final Scene sceneGO;
     private static GameOverPane gameOverPane;
-    private GameOverPane(){
+
+    private GameOverPane(boolean victory){
         gridPaneGO = new GridPane();
 
         gridPaneGO.setHgap(0);
@@ -28,16 +29,20 @@ public class GameOverPane {
         gridPaneGO.getRowConstraints().add(new RowConstraints(120));
         gridPaneGO.getRowConstraints().add(new RowConstraints(120));
 
-        BackgroundImage endImage = new BackgroundImage(new Image(DIR_LOC + "end.png",852,480,false,true),
-                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
+        BackgroundImage endImage;
 
-        final Background backg = new Background(endImage);
+        if(victory) {
+            endImage =new BackgroundImage(new Image(DIR_LOC + "victory.jpg",852,480,false,true),
+                    BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                    BackgroundSize.DEFAULT);
+        } else {
+            endImage =new BackgroundImage(new Image(DIR_LOC + "end.png",852,480,false,true),
+                    BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                    BackgroundSize.DEFAULT);
+        }
 
-        gridPaneGO.setBackground(backg);
+        gridPaneGO.setBackground(new Background(endImage));
         gridPaneGO.setPrefSize(852,480);
-        //gridPaneGO.setGridLinesVisible(true);
-
         sceneGO = new Scene(gridPaneGO,852,480);
     }
 
@@ -45,12 +50,11 @@ public class GameOverPane {
      *
      * @return this.Pane
      */
-    public GridPane getPane(){ return gridPaneGO; }
-
     public Scene getScene(){ return sceneGO; }
-    public static GameOverPane getInstance(){
+
+    public static GameOverPane getInstance(boolean victory){
         if(gameOverPane == null){
-            gameOverPane = new GameOverPane();
+            gameOverPane = new GameOverPane(victory);
         }
         return gameOverPane;
     }
