@@ -1,8 +1,0 @@
-UP
-DOWN
-LEFT
-RIGHT
-SPACE
-Z
-X
-C
